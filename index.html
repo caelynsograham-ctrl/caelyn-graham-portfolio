@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caelyn Graham Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
-
     <style>
       :root {
         --bg-color: #F4EEE9;
@@ -15,11 +14,7 @@
         --button-black: #2B2B2B;
       }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
 
       body {
         background-color: var(--bg-color);
@@ -29,23 +24,23 @@
         font-family: 'Unbounded', sans-serif;
         color: var(--dark-grey);
         overflow-x: hidden;
-        /* Added to handle negative margins */
       }
 
-      /* --- LOGO --- */
+      /* --- LOGO (Preserved Layout, Added Clickability) --- */
       .rabbit-fixed {
         position: fixed;
-        /* Anchored to top-right of the hero-container area */
-        z-index: 1;
-        pointer-events: none;
+        z-index: 11; /* High z-index to ensure it is clickable over text */
         opacity: 0.4;
         will-change: transform, width, top, right;
         transition: opacity 0.3s ease;
+        display: block; /* Required for the anchor tag to hold the image shape */
+        cursor: pointer;
       }
 
       .rabbit-fixed img {
         width: 100%;
         height: auto;
+        display: block;
       }
 
       .sticky-btn {
@@ -71,153 +66,69 @@
         overflow: hidden;
       }
 
-/* --- HERO SECTION REWRITE --- */
-#hero-section {
-    padding-left: 0.4vw;
-    padding-right: 5vw;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
+      #hero-section {
+        padding-left: 0.4vw;
+        padding-right: 5vw;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
 
-.hero-text {
-    font-weight: 900;
-    line-height: 1.1; /* Reduced from 1.99 to bring names closer together */
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 10;
-}
+      .hero-text {
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 10;
+      }
 
-/* Aligned Left */
-.caelyn-name {
-    /* FIX: Added 'px' unit - without this, the browser ignores the size */
-    font-size: 170.5px; 
-    letter-spacing: -0.05em;
-    display: block;
-    /* Move slightly left and up */
-    transform: scale(.85, 2) translateY(1vw); 
-    /* FIX: Ensures the 'C' stays at the left edge when scaling */
-    transform-origin: left center; 
-    margin-left: 2vw; 
-}
+      .caelyn-name {
+        font-size: 170.5px; 
+        letter-spacing: -0.05em;
+        display: block;
+        transform: scale(.85, 2) translateY(1vw); 
+        transform-origin: left center; 
+        margin-left: 2vw; 
+      }
 
-/* Aligned Right and Tucked Under Rabbit */
-.graham-name {
-    font-size: 170.5px;
-    letter-spacing: -0.05em;
-    text-align: right;
-    position: absolute;
-    left: 2vw; /* Anchors Graham to the right edge */
-    z-index: 11;
-    /* Combined stretch and upward tuck */
-    transform: scale(1.2, 1.8) translateY(12vw); 
-    /* FIX: Ensures the 'M' stays at the right edge when scaling */
-    transform-origin: left center; 
-}
+      .graham-name {
+        font-size: 170.5px;
+        letter-spacing: -0.05em;
+        text-align: right;
+        position: absolute;
+        left: 2vw; 
+        z-index: 12;
+        transform: scale(1.2, 1.8) translateY(12vw); 
+        transform-origin: left center; 
+      }
 
-      /* --- REST OF THE CODE (ABOUT/CAROUSEL) --- */
+      /* --- ABOUT & CAROUSEL --- */
       #about-section {
         padding: 0 5vw;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-
-      .about-container {
-        position: relative;
-        width: 100%;
-        max-width: 1200px;
-        height: 552px;
-      }
-
-      .pink-square {
-        width: 459px;
-        height: 552px;
-        background-color: var(--pink-accent);
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 1;
-      }
-
-      .about-content {
-        position: absolute;
-        top: 0;
-        left: 459px;
-        display: flex;
-        flex-direction: column;
-        z-index: 10;
-      }
-
-      .about-content h2 {
-        font-size: 11vw;
-        line-height: 0.8;
-        margin-bottom: 30px;
-        margin-left: -22vw;
-        white-space: nowrap;
-      }
-
-      .grey-placeholder {
-        width: 350px;
-        height: 180px;
-        background-color: var(--grey-box);
-        margin-left: -5vw;
-      }
-
-      /* --- CAROUSEL SECTION --- */
-      #carousel-section {
-        align-items: center;
-      }
-
-      .carousel-frame {
-        background-color: var(--pink-accent);
-        width: 85%;
-        height: 600px;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        position: relative;
-        /* Round corners by 21% */
-        border-radius: 5%;
-      }
-
-      .carousel-track {
-        display: flex;
-        gap: 40px;
-      }
-
-      .carousel-item {
-        min-width: 300px;
-        height: 380px;
-        background-color: #ffffff;
-      }
-
-      .carousel-item.inactive {
-        background-color: var(--grey-box);
-      }
-
-      .nav-buttons {
-        display: flex;
-        gap: 30px;
-        margin-top: 40px;
-      }
-
-      .nav-btn {
-        width: 120px;
-        height: 35px;
-        background-color: var(--button-black);
-        border: none;
-        cursor: pointer;
-      }
+      .about-container { position: relative; width: 100%; max-width: 1200px; height: 552px; }
+      .pink-square { width: 459px; height: 552px; background-color: var(--pink-accent); position: absolute; left: 0; top: 0; z-index: 1; }
+      .about-content { position: absolute; top: 0; left: 459px; display: flex; flex-direction: column; z-index: 10; }
+      .about-content h2 { font-size: 11vw; line-height: 0.8; margin-bottom: 30px; margin-left: -22vw; white-space: nowrap; }
+      .grey-placeholder { width: 350px; height: 180px; background-color: var(--grey-box); margin-left: -5vw; }
+      #carousel-section { align-items: center; }
+      .carousel-frame { background-color: var(--pink-accent); width: 85%; height: 600px; display: flex; align-items: center; overflow: hidden; position: relative; border-radius: 5%; }
+      .carousel-track { display: flex; gap: 40px; }
+      .carousel-item { min-width: 300px; height: 380px; background-color: #ffffff; }
+      .carousel-item.inactive { background-color: var(--grey-box); }
+      .nav-buttons { display: flex; gap: 30px; margin-top: 40px; }
+      .nav-btn { width: 120px; height: 35px; background-color: var(--button-black); border: none; cursor: pointer; }
     </style>
-  </head>
+</head>
+<body>
 
-  <body>
-
-    <div id="main-rabbit" class="rabbit-fixed">
+    <a href="nav.html" id="main-rabbit" class="rabbit-fixed">
       <img src="Graham_logo.png" alt="Logo">
-    </div>
+    </a>
 
     <button class="sticky-btn"></button>
 
@@ -245,7 +156,6 @@
           <div class="carousel-item inactive"></div>
         </div>
       </div>
-
       <div class="nav-buttons">
         <button class="nav-btn" onclick="moveCarousel(-1)"></button>
         <button class="nav-btn" onclick="moveCarousel(1)"></button>
@@ -255,26 +165,19 @@
     <script>
       const rabbit = document.getElementById('main-rabbit');
 
-      /* LOGO POSITIONING FUNCTION */
-      /* Adjusted the starting values so it lives on the RIGHT edge on load */
       function updateRabbit () {
         const scrollY = window.scrollY;
         const windowHeight = window.innerHeight;
         const windowWidth = window.innerWidth;
         let progress = Math.min(scrollY / windowHeight, 1);
 
-        // Starting width (Large on Hero)
         const startWidth = windowWidth * 0.50;
         const endWidth = 80;
-
-        // Anchor to the RIGHT edge initially, not 8vw inward
         const startRight = windowWidth * 0.0;
         const endRight = 20;
-
         const startTop = windowHeight * 0.0;
         const endTop = 20;
 
-        // Linear interpolation based on scroll progress
         const currentWidth = startWidth - (progress * (startWidth - endWidth));
         const currentTop = startTop - (progress * (startTop - endTop));
         const currentRight = startRight - (progress * (startRight - endRight));
@@ -282,11 +185,10 @@
         rabbit.style.width = currentWidth + "px";
         rabbit.style.top = currentTop + "px";
         rabbit.style.right = currentRight + "px";
-        rabbit.style.opacity = 0.8 + (progress * 0.4);
+        // Increased opacity slightly to show it's a clickable button
+        rabbit.style.opacity = 0.6 + (progress * 0.4); 
       }
 
-      /* INITIAL LOAD FIX */
-      // Run once immediately on load to prevent the logo from starting in the corner
       window.addEventListener('load', updateRabbit);
       window.addEventListener('scroll', updateRabbit);
       window.addEventListener('resize', updateRabbit);
@@ -296,45 +198,21 @@
       let items = Array.from(track.children);
       const itemWidth = 300;
       const gap = 40;
-
-      items.forEach(item => {
-        track.appendChild(item.cloneNode(true));
-      });
-
+      items.forEach(item => track.appendChild(item.cloneNode(true)));
       let position = 0;
-
       function moveCarousel (direction) {
         position += direction * (itemWidth + gap);
         track.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
         track.style.transform = `translateX(${-position}px)`;
-
         const max = (itemWidth + gap) * items.length;
-
-        if (position >= max) {
-          setTimeout(() => reset(0), 400);
-        }
-        if (position < 0) {
-          setTimeout(() => reset(max - (itemWidth + gap)), 400);
-        }
-
-        updateStyles();
+        if (position >= max) setTimeout(() => reset(0), 400);
+        if (position < 0) setTimeout(() => reset(max - (itemWidth + gap)), 400);
       }
-
       function reset (newPos) {
         track.style.transition = "none";
         position = newPos;
         track.style.transform = `translateX(${-position}px)`;
       }
-
-      function updateStyles () {
-        const allTrackItems = Array.from(track.children);
-        allTrackItems.forEach((item, i) => {
-          item.classList.toggle('inactive', i % 4 === 3);
-        });
-      }
-
-      updateStyles();
     </script>
-
-  </body>
+</body>
 </html>
