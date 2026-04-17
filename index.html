@@ -1,279 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caelyn Graham Portfolio</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caelyn Graham Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-color: #F4EEE9;
+        --pink-accent: #D97388;
+        --grey-box: #e0e0e0;
+        --dark-grey: #4d4d4d;
+        --button-black: #2B2B2B;
+      }
 
-<style>
-:root {
-    --bg-color: #f2ede9; 
-    --pink-accent: #d17d88;
-    --grey-box: #e0e0e0;
-    --dark-grey: #4d4d4d;
-    --button-black: #2a2a2a;
-}
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background-color: var(--bg-color);
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+        font-family: 'Unbounded', sans-serif;
+        color: var(--dark-grey);
+        overflow-x: hidden;
+        /* Added to handle negative margins */
+      }
 
-body {
-    background-color: var(--bg-color);
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-    font-family: 'Unbounded', sans-serif;
-    color: var(--dark-grey);
-}
+      /* --- LOGO --- */
+      .rabbit-fixed {
+        position: fixed;
+        /* Anchored to top-right of the hero-container area */
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.4;
+        will-change: transform, width, top, right;
+        transition: opacity 0.3s ease;
+      }
 
-/* LOGO */
-.rabbit-fixed {
-    position: fixed;
-    z-index: 50;
-    pointer-events: none;
-    opacity: 0.6;
-    will-change: transform, width, top, right;
-}
-.rabbit-fixed img {
-    width: 100%;
-    height: auto;
-}
+      .rabbit-fixed img {
+        width: 100%;
+        height: auto;
+      }
 
-/* BUTTON */
-.sticky-btn {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 140px;
-    height: 35px;
-    background-color: var(--button-black);
-    z-index: 100;
-    border: none;
-    cursor: pointer;
-}
+      .sticky-btn {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        height: 35px;
+        background-color: var(--button-black);
+        z-index: 100;
+        border: none;
+      }
 
-/* SECTIONS */
-section {
-    height: 100vh;
-    width: 100vw;
-    scroll-snap-align: start;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-}
+      section {
+        height: 100vh;
+        width: 100vw;
+        scroll-snap-align: start;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
 
-/* HERO */
-#hero-section { padding: 0 5vw; }
-.hero-text {
-    font-size: 13.5vw;
-    line-height: 0.85;
+      /* --- HERO SECTION REWRITE --- */
+      #hero-section {
+        padding-left: 0.4vw;
+        padding-right: 5vw;
+      }
+
+      .hero-text {
+        /* Fluid scaling font size */
+        font-weight: 900;
+        line-height: 1.99;
+        /* Tighter line height to match mockup */
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* Aligned Left */
+      .caelyn-name {
+        font-size: 170.5;
+        letter-spacing: -0.06em;
+        font-stretch: expanded;
+        text-transform: uppercase;
+        transform: scale(.9, 2)translateY(1vw);
+        position: relative;
+        z-index: 10;
+        margin-left: -5vw;
+      }
+
+      /* Aligned Right and Tucked Under Rabbit */
+      .graham-name {
+        font-size: 170.5px; /* Note: ensure this has 'px' or 'vw' if not working */
     letter-spacing: -0.05em;
+    font-stretch: expanded;
     text-transform: uppercase;
-}
+    margin-left: 7vw;
+    text-align: right;
 
-/* ABOUT */
-#about-section {
-    padding: 0 5vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.about-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    height: 552px;
-}
-.pink-square {
-    width: 459px;
-    height: 552px;
-    background-color: var(--pink-accent);
+    /* POSITIONING & STRETCH */
     position: absolute;
-    left: 0;
-    top: 0;
-}
-.about-content {
-    position: absolute;
-    top: 0;
-    left: 459px;
-    display: flex;
-    flex-direction: column;
-}
-.about-content h2 {
-    font-size: 11vw;
-    line-height: 0.8;
-    margin-bottom: 30px;
-    margin-left: -15vw;
-    white-space: nowrap;
-}
-.grey-placeholder {
-    width: 350px;
-    height: 180px;
-    background-color: var(--grey-box);
-    margin-left: 20px;
-}
+    z-index: 11;
+  transform: scale(1.2, 1.8) translateY(12vw);
+    
+   
+      }
 
-/* CAROUSEL */
-#carousel-section { align-items: center; }
+      /* --- REST OF THE CODE (ABOUT/CAROUSEL) --- */
+      #about-section {
+        padding: 0 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.carousel-frame {
-    background-color: var(--pink-accent);
-    width: 85%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
+      .about-container {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        height: 552px;
+      }
 
-.carousel-track {
-    display: flex;
-    gap: 40px;
-    padding: 0 40px;
-    transition: transform 0.4s ease;
-}
+      .pink-square {
+        width: 459px;
+        height: 552px;
+        background-color: var(--pink-accent);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
 
-.carousel-item {
-    min-width: 300px;
-    height: 100%;
-    background-color: #ffffff;
-}
+      .about-content {
+        position: absolute;
+        top: 0;
+        left: 459px;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+      }
 
-.carousel-item.inactive {
-    background-color: var(--grey-box);
-}
+      .about-content h2 {
+        font-size: 11vw;
+        line-height: 0.8;
+        margin-bottom: 30px;
+        margin-left: -22vw;
+        white-space: nowrap;
+      }
 
-.nav-buttons {
-    display: flex;
-    gap: 30px;
-    margin-top: 40px;
-}
-.nav-btn {
-    width: 120px;
-    height: 35px;
-    background-color: var(--button-black);
-    border: none;
-    cursor: pointer;
-}
-</style>
-</head>
+      .grey-placeholder {
+        width: 350px;
+        height: 180px;
+        background-color: var(--grey-box);
+        margin-left: -5vw;
+      }
 
-<body>
+      /* --- CAROUSEL SECTION --- */
+      #carousel-section {
+        align-items: center;
+      }
 
-<!-- LOGO -->
-<div id="main-rabbit" class="rabbit-fixed">
-    <img src="Graham_logo.png" alt="Logo">
-</div>
+      .carousel-frame {
+        background-color: var(--pink-accent);
+        width: 85%;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        /* Round corners by 21% */
+        border-radius: 5%;
+      }
 
-<button class="sticky-btn"></button>
+      .carousel-track {
+        display: flex;
+        gap: 40px;
+      }
 
-<!-- HERO -->
-<section id="hero-section">
-    <h1 class="hero-text">CAELYN<br>GRAHAM</h1>
-</section>
+      .carousel-item {
+        min-width: 300px;
+        height: 380px;
+        background-color: #ffffff;
+      }
 
-<!-- ABOUT -->
-<section id="about-section">
-    <div class="about-container">
+      .carousel-item.inactive {
+        background-color: var(--grey-box);
+      }
+
+      .nav-buttons {
+        display: flex;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .nav-btn {
+        width: 120px;
+        height: 35px;
+        background-color: var(--button-black);
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="main-rabbit" class="rabbit-fixed">
+      <img src="Graham_logo.png" alt="Logo">
+    </div>
+
+    <button class="sticky-btn"></button>
+
+    <section id="hero-section">
+      <h1 class="hero-text caelyn-name">CAELYN</h1>
+      <h1 class="hero-text graham-name">GRAHAM</h1>
+    </section>
+
+    <section id="about-section">
+      <div class="about-container">
         <div class="pink-square"></div>
         <div class="about-content">
-            <h2>About Me</h2>
-            <div class="grey-placeholder"></div>
+          <h2>About Me</h2>
+          <div class="grey-placeholder"></div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- CAROUSEL -->
-<section id="carousel-section">
-    <div class="carousel-frame">
+    <section id="carousel-section">
+      <div class="carousel-frame">
         <div class="carousel-track" id="track">
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
-            <div class="carousel-item inactive"></div>
+          <div class="carousel-item"></div>
+          <div class="carousel-item"></div>
+          <div class="carousel-item"></div>
+          <div class="carousel-item inactive"></div>
         </div>
-    </div>
+      </div>
 
-    <div class="nav-buttons">
+      <div class="nav-buttons">
         <button class="nav-btn" onclick="moveCarousel(-1)"></button>
         <button class="nav-btn" onclick="moveCarousel(1)"></button>
-    </div>
-</section>
+      </div>
+    </section>
 
-<script>
-const rabbit = document.getElementById('main-rabbit');
+    <script>
+      const rabbit = document.getElementById('main-rabbit');
 
-/* SCROLL ANIMATION */
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    let progress = Math.min(scrollY / windowHeight, 1);
+      /* LOGO POSITIONING FUNCTION */
+      /* Adjusted the starting values so it lives on the RIGHT edge on load */
+      function updateRabbit () {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const windowWidth = window.innerWidth;
+        let progress = Math.min(scrollY / windowHeight, 1);
 
-    const startWidth = window.innerWidth * 0.38;
-    const endWidth = 60;
+        // Starting width (Large on Hero)
+        const startWidth = windowWidth * 0.50;
+        const endWidth = 80;
 
-    const currentWidth = startWidth - (progress * (startWidth - endWidth));
-    const currentTop = (windowHeight * 0.05) - (progress * ((windowHeight * 0.05) - 20));
-    const currentRight = (window.innerWidth * 0.08) - (progress * ((window.innerWidth * 0.08) - 20));
+        // Anchor to the RIGHT edge initially, not 8vw inward
+        const startRight = windowWidth * 0.0;
+        const endRight = 20;
 
-    rabbit.style.width = currentWidth + "px";
-    rabbit.style.top = currentTop + "px";
-    rabbit.style.right = currentRight + "px";
-});
+        const startTop = windowHeight * 0.0;
+        const endTop = 20;
 
-/* INFINITE CAROUSEL */
-const track = document.getElementById('track');
-let items = Array.from(track.children);
+        // Linear interpolation based on scroll progress
+        const currentWidth = startWidth - (progress * (startWidth - endWidth));
+        const currentTop = startTop - (progress * (startTop - endTop));
+        const currentRight = startRight - (progress * (startRight - endRight));
 
-const itemWidth = 300;
-const gap = 40;
+        rabbit.style.width = currentWidth + "px";
+        rabbit.style.top = currentTop + "px";
+        rabbit.style.right = currentRight + "px";
+        rabbit.style.opacity = 0.8 + (progress * 0.4);
+      }
 
-/* clone for seamless loop */
-items.forEach(item => {
-    track.appendChild(item.cloneNode(true));
-});
+      /* INITIAL LOAD FIX */
+      // Run once immediately on load to prevent the logo from starting in the corner
+      window.addEventListener('load', updateRabbit);
+      window.addEventListener('scroll', updateRabbit);
+      window.addEventListener('resize', updateRabbit);
 
-let position = 0;
+      /* CAROUSEL LOGIC */
+      const track = document.getElementById('track');
+      let items = Array.from(track.children);
+      const itemWidth = 300;
+      const gap = 40;
 
-function moveCarousel(direction) {
-    position += direction * (itemWidth + gap);
-    track.style.transform = `translateX(${-position}px)`;
+      items.forEach(item => {
+        track.appendChild(item.cloneNode(true));
+      });
 
-    const max = (itemWidth + gap) * items.length;
+      let position = 0;
 
-    if (position >= max) {
-        reset(0);
-    }
-    if (position < 0) {
-        reset(max - (itemWidth + gap));
-    }
+      function moveCarousel (direction) {
+        position += direction * (itemWidth + gap);
+        track.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
+        track.style.transform = `translateX(${-position}px)`;
 
-    updateStyles();
-}
+        const max = (itemWidth + gap) * items.length;
 
-function reset(newPos) {
-    track.style.transition = "none";
-    position = newPos;
-    track.style.transform = `translateX(${-position}px)`;
-    requestAnimationFrame(() => {
-        track.style.transition = "transform 0.4s ease";
-    });
-}
+        if (position >= max) {
+          setTimeout(() => reset(0), 400);
+        }
+        if (position < 0) {
+          setTimeout(() => reset(max - (itemWidth + gap)), 400);
+        }
 
-/* keep 4th item grey */
-function updateStyles() {
-    const index = Math.round(position / (itemWidth + gap));
+        updateStyles();
+      }
 
-    Array.from(track.children).forEach((item, i) => {
-        item.classList.toggle('inactive', i === index + 3);
-    });
-}
+      function reset (newPos) {
+        track.style.transition = "none";
+        position = newPos;
+        track.style.transform = `translateX(${-position}px)`;
+      }
 
-updateStyles();
-</script>
+      function updateStyles () {
+        const allTrackItems = Array.from(track.children);
+        allTrackItems.forEach((item, i) => {
+          item.classList.toggle('inactive', i % 4 === 3);
+        });
+      }
 
-</body>
+      updateStyles();
+    </script>
+
+  </body>
 </html>
