@@ -71,51 +71,50 @@
         overflow: hidden;
       }
 
-      /* --- HERO SECTION REWRITE --- */
-      #hero-section {
-        padding-left: 0.4vw;
-        padding-right: 5vw;
-      }
+/* --- HERO SECTION REWRITE --- */
+#hero-section {
+    padding-left: 0.4vw;
+    padding-right: 5vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 
-      .hero-text {
-        /* Fluid scaling font size */
-        font-weight: 900;
-        line-height: 1.99;
-        /* Tighter line height to match mockup */
-        letter-spacing: -0.05em;
-        text-transform: uppercase;
-        position: relative;
-        z-index: 10;
-      }
-
-      /* Aligned Left */
-      .caelyn-name {
-        font-size: 170.5;
-        letter-spacing: -0.06em;
-        font-stretch: expanded;
-        text-transform: uppercase;
-        transform: scale(.9, 2)translateY(1vw);
-        position: relative;
-        z-index: 10;
-        margin-left: -5vw;
-      }
-
-      /* Aligned Right and Tucked Under Rabbit */
-      .graham-name {
-        font-size: 170.5px; /* Note: ensure this has 'px' or 'vw' if not working */
+.hero-text {
+    font-weight: 900;
+    line-height: 1.1; /* Reduced from 1.99 to bring names closer together */
     letter-spacing: -0.05em;
-    font-stretch: expanded;
     text-transform: uppercase;
-    margin-left: 7vw;
-    text-align: right;
+    position: relative;
+    z-index: 10;
+}
 
-    /* POSITIONING & STRETCH */
+/* Aligned Left */
+.caelyn-name {
+    /* FIX: Added 'px' unit - without this, the browser ignores the size */
+    font-size: 170.5px; 
+    letter-spacing: -0.06em;
+    display: block;
+    /* Move slightly left and up */
+    transform: scale(.9, 2) translateY(0vw); 
+    /* FIX: Ensures the 'C' stays at the left edge when scaling */
+    transform-origin: left center; 
+    margin-left: -2vw; 
+}
+
+/* Aligned Right and Tucked Under Rabbit */
+.graham-name {
+    font-size: 170.5px;
+    letter-spacing: -0.05em;
+    text-align: right;
     position: absolute;
+    right: 2vw; /* Anchors Graham to the right edge */
     z-index: 11;
-  transform: scale(1.2, 1.8) translateY(12vw);
-    
-   
-      }
+    /* Combined stretch and upward tuck */
+    transform: scale(1.2, 1.8) translateY(8vw); 
+    /* FIX: Ensures the 'M' stays at the right edge when scaling */
+    transform-origin: right center; 
+}
 
       /* --- REST OF THE CODE (ABOUT/CAROUSEL) --- */
       #about-section {
