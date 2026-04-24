@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caelyn Graham Portfolio</title>
@@ -14,7 +14,11 @@
         --button-black: #2B2B2B;
       }
 
-      * { box-sizing: border-box; margin: 0; padding: 0; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
       body {
         background-color: var(--bg-color);
@@ -29,11 +33,13 @@
       /* --- LOGO (Preserved Layout, Added Clickability) --- */
       .rabbit-fixed {
         position: fixed;
-        z-index: 11; /* High z-index to ensure it is clickable over text */
+        z-index: 11;
+        /* High z-index to ensure it is clickable over text */
         opacity: 0.4;
         will-change: transform, width, top, right;
         transition: opacity 0.3s ease;
-        display: block; /* Required for the anchor tag to hold the image shape */
+        display: block;
+        /* Required for the anchor tag to hold the image shape */
         cursor: pointer;
       }
 
@@ -43,17 +49,7 @@
         display: block;
       }
 
-      .sticky-btn {
-        position: fixed;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 140px;
-        height: 35px;
-        background-color: var(--button-black);
-        z-index: 100;
-        border: none;
-      }
+    
 
       section {
         height: 100vh;
@@ -81,15 +77,16 @@
         text-transform: uppercase;
         position: relative;
         z-index: 10;
+        color: #2B2B2B
       }
 
       .caelyn-name {
-        font-size: 170.5px; 
+        font-size: 170.5px;
         letter-spacing: -0.05em;
         display: block;
-        transform: scale(.85, 2) translateY(1vw); 
-        transform-origin: left center; 
-        margin-left: 2vw; 
+        transform: scale(.85, 2) translateY(1vw);
+        transform-origin: left center;
+        margin-left: 2vw;
       }
 
       .graham-name {
@@ -97,10 +94,10 @@
         letter-spacing: -0.05em;
         text-align: right;
         position: absolute;
-        left: 2vw; 
+        left: 2vw;
         z-index: 12;
-        transform: scale(1.2, 1.8) translateY(12vw); 
-        transform-origin: left center; 
+        transform: scale(1.2, 1.8) translateY(12vw);
+        transform-origin: left center;
       }
 
       /* --- ABOUT & CAROUSEL --- */
@@ -110,21 +107,109 @@
         align-items: center;
         justify-content: center;
       }
-      .about-container { position: relative; width: 100%; max-width: 1200px; height: 552px; }
-      .pink-square { width: 459px; height: 552px; background-color: var(--pink-accent); position: absolute; left: 0; top: 0; z-index: 1; }
-      .about-content { position: absolute; top: 0; left: 459px; display: flex; flex-direction: column; z-index: 10; }
-      .about-content h2 { font-size: 11vw; line-height: 0.8; margin-bottom: 30px; margin-left: -22vw; white-space: nowrap; }
-      .grey-placeholder { width: 350px; height: 180px; background-color: var(--grey-box); margin-left: -5vw; }
-      #carousel-section { align-items: center; }
-      .carousel-frame { background-color: var(--pink-accent); width: 85%; height: 600px; display: flex; align-items: center; overflow: hidden; position: relative; border-radius: 5%; }
-      .carousel-track { display: flex; gap: 40px; }
-      .carousel-item { min-width: 300px; height: 380px; background-color: #ffffff; }
-      .carousel-item.inactive { background-color: var(--grey-box); }
-      .nav-buttons { display: flex; gap: 30px; margin-top: 40px; }
-      .nav-btn { width: 120px; height: 35px; background-color: var(--button-black); border: none; cursor: pointer; }
+
+      .about-container {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        height: 552px;
+      }
+
+      .pink-square {
+        width: 459px;
+        height: 552px;
+        background-color: var(--pink-accent);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
+
+      .about-content {
+        position: absolute;
+        top: 0;
+        left: 459px;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+      }
+
+      .about-content h2 {
+        font-size: 11vw;
+        line-height: 0.8;
+        transform: scale(0.8, 1.3) translateY(-1vw);
+        margin-bottom: 30px;
+        margin-left: -5vw;
+        white-space: nowrap;
+        color: #2B2B2B
+      }
+
+      .grey-placeholder {
+        width: 350px;
+        height: 180px;
+        background-color: var(--grey-box);
+        margin-left: -5vw;
+      }
+
+      #carousel-section {
+        align-items: center;
+      }
+      .carousel-text {
+    width: 100%;
+    text-align: center;
+}
+
+      .carousel-frame {
+        background-color: var(--pink-accent);
+        width: 85%;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        border-radius: 5%;
+      }
+
+      .carousel-track {
+        display: flex;
+        gap: 40px;
+      }
+
+      .carousel-item {
+        min-width: 300px;
+        height: 380px;
+        background-color: #ffffff;
+      }
+
+      .carousel-item.inactive {
+        background-color: var(--grey-box);
+      }
+      .carousel-text h2 {
+        margin-left: 0;
+        font-size: 11vw;
+        line-height: 0.8;
+        transform: scale(0.8, 1) translateY(-2vw);
+        margin-bottom: 30px;
+        white-space: nowrap;
+        color: #2B2B2B
+      }
+
+      .nav-buttons {
+        display: flex;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .nav-btn {
+        width: 120px;
+        height: 35px;
+        background-color: var(--button-black);
+        border: none;
+        cursor: pointer;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
 
     <a href="nav.html" id="main-rabbit" class="rabbit-fixed">
       <img src="Graham_logo.png" alt="Logo">
@@ -148,6 +233,9 @@
     </section>
 
     <section id="carousel-section">
+     <div class="carousel-text">
+  <h2>My Work</h2>
+</div>
       <div class="carousel-frame">
         <div class="carousel-track" id="track">
           <div class="carousel-item"></div>
@@ -186,7 +274,7 @@
         rabbit.style.top = currentTop + "px";
         rabbit.style.right = currentRight + "px";
         // Increased opacity slightly to show it's a clickable button
-        rabbit.style.opacity = 0.6 + (progress * 0.4); 
+        rabbit.style.opacity = 0.6 + (progress * 0.4);
       }
 
       window.addEventListener('load', updateRabbit);
@@ -200,6 +288,7 @@
       const gap = 40;
       items.forEach(item => track.appendChild(item.cloneNode(true)));
       let position = 0;
+
       function moveCarousel (direction) {
         position += direction * (itemWidth + gap);
         track.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
@@ -208,11 +297,12 @@
         if (position >= max) setTimeout(() => reset(0), 400);
         if (position < 0) setTimeout(() => reset(max - (itemWidth + gap)), 400);
       }
+
       function reset (newPos) {
         track.style.transition = "none";
         position = newPos;
         track.style.transform = `translateX(${-position}px)`;
       }
     </script>
-</body>
+  </body>
 </html>
