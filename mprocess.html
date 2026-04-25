@@ -1,168 +1,168 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
+
     <title>I'm Hungry - Magazine Project</title>
     <style>
-        /* General Styles */
-        html {
-            scroll-behavior: smooth; /* This makes the jumping look like scrolling */
-        }
-        body {
-            background-color: #f2ede9; /* Light beige background from image */
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+      /* General Styles */
+      html {
+        scroll-behavior: smooth;
+        /* This makes the jumping look like scrolling */
+      }
 
-        /* Sticky Rabbit Button */
-        .rabbit-sticky {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 90px;
-            z-index: 100;
-            transition: transform 0.3s ease;
-        }
-        .rabbit-sticky:hover {
-            transform: scale(1.1);
-        }
+      body {
+        background-color: #f2ede9;
+        /* Light beige background from image */
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-        /* Main Container */
-        .container {
-            max-width: 800px;
-            width: 90%;
-            padding: 50px 0;
-        }
+      /* Sticky Rabbit Button */
+      .rabbit-sticky {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 90px;
+        z-index: 100;
+        transition: transform 0.3s ease;
+      }
 
-        /* Hero / Widget Area */
-        .hero-section {
-            background-color: #d9d9d9;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-        }
+      .rabbit-sticky:hover {
+        transform: scale(1.1);
+      }
 
-        /* Navigation Buttons */
-        .nav-bar {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 80px;
-        }
-        .nav-button {
-            background-color: #2e2e2e;
-            color: white;
-            text-decoration: none;
-            padding: 15px 10px;
-            text-align: center;
-            font-size: 1.1rem;
-            border: none;
-            cursor: pointer;
-        }
-        .nav-button:hover {
-            background-color: #444;
-        }
+      /* Main Container */
+      .container {
+        max-width: 1200px;
+        width: 95%;
+      }
 
-        /* Content Sections */
-        section {
-            padding-top: 60px; /* Offset for scrolling */
-            margin-bottom: 100px;
-            position: relative;
-        }
+      /* Hero / Widget Area */
+      .hero-section {
+        margin-top: 100px;
+       margin-left: -50px;
+        margin-bottom: 30px;
+        padding: 20px;
+      }
 
-        .section-header {
-            background-color: #2e2e2e;
-            color: white;
-            display: inline-block;
-            padding: 10px 40px;
-            margin-bottom: 20px;
-            width: fit-content;
-        }
+      /* Navigation Buttons */
+      .nav-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 80px;
+      }
 
-        .content-box {
-            background-color: #2e2e2e;
-            color: white;
-            padding: 30px;
-            display: flex;
-            gap: 20px;
-            line-height: 1.6;
-        }
+     .nav-button {
+  background-color: #2e2e2e;
+  font-family: 'Unbounded', sans-serif;
+  color: white;
+  text-decoration: none;
 
-        .content-box img {
-            max-width: 300px;
-            height: auto;
-            border: 1px solid #555;
-        }
+  font-size: 1.4rem;
+  padding: 22px 18px;
 
-        .background-label {
-            position: absolute;
-            top: -20px;
-            left: -30px;
-            font-size: 3rem;
-            color: rgba(0,0,0,0.1);
-            font-weight: bold;
-            z-index: -1;
-            text-transform: lowercase;
-        }
+  display: flex;              /* 👈 key fix */
+  justify-content: center;    /* horizontal center */
+  align-items: center;        /* vertical center */
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+      .nav-button:hover {
+        background-color: #D97388;
+        color: #2B2B2B;
+        transform: scale(1.05);
+      }
+
+
+      /* Content Sections */
+      section {
+        padding-top: 60px;
+        /* Offset for scrolling */
+        margin-bottom: 100px;
+        position: relative;
+      }
+
+      .section-header {
+        color: #D97388;
+        display: inline-block;
+        padding: 10px 40px;
+        margin-bottom: 20px;
+        margin-left: -45px;
+        font-size: 52px;
+        font-weight: 500;
+        font-family: 'Unbounded', sans-serif;
+
+      }
+
+      .content-box {
+        background-color: #2e2e2e;
+        color: white;
+        padding: 30px;
+        display: flex;
+        gap: 20px;
+        line-height: 1.6;
+      }
+
+      .content-box img {
+        max-width: 300px;
+        height: auto;
+        border: 1px solid #555;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
 
     <div class="rabbit-sticky">
-        <a href="nav.html">
-            <img src="Graham_logo.png" alt="Logo" style="width:100%">
-        </a>
+      <a href="nav.html">
+        <img src="Graham_logo.png" alt="Logo" style="width:100%">
+      </a>
     </div>
 
     <div class="container">
-        <div class="hero-section">
-            <h1>Widget of magazine, functioning as final project</h1>
+      <div class="hero-section">
+       <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1300px" height="600" src="https://embed.figma.com/design/Bkwf2HGDfaqg9uEH4XR2o7/Paper-Magazine--Mockup-with-Page-Animation--Community-?node-id=10002-10&embed-host=share" allowfullscreen></iframe>
+      </div>
+
+      <nav class="nav-bar">
+        <a href="#concept" class="nav-button">Concept</a>
+        <a href="#challenges" class="nav-button">Challenges</a>
+        <a href="#outcome" class="nav-button">Final Outcome</a>
+      </nav>
+
+      <section id="concept">
+        <div class="section-header">Concept / theme</div>
+        <div class="content-box">
+          <div>
+            <p>In my magazine <strong>I'm Hungry</strong>, the central idea is that food is comfort. Inspired by Teen Magazine and Popeye Magazine, it explores a dichotomy between being surrounded by bright and eye-catching food with cultural ties but still feeling disconnected...</p>
+          </div>
+          <img src="sketch.png" alt="Sketches of magazine layout">
         </div>
+      </section>
 
-        <nav class="nav-bar">
-            <a href="#concept" class="nav-button">Concept</a>
-            <a href="#outcome" class="nav-button">Final Outcome</a>
-            <a href="#challenges" class="nav-button">Challenges & Problem-Solving</a>
-        </nav>
+      <section id="challenges">
+        <div class="section-header">Challenges & Problem-Solving</div>
+        <div class="content-box">
+          <p>One of the more challenging aspects of my magazine was developing a cohesive visual story across all of my images. Initially, I struggled to present the photos in a way that felt both unified and engaging while maintaining a dynamic layout...</p>
+        </div>
+      </section>
 
-        <section id="concept">
-            <div class="background-label">concept</div>
-            <div class="section-header">Concept / theme</div>
-            <div class="content-box">
-                <div>
-                    <p>In my magazine <strong>I'm Hungry</strong>, the central idea is that food is comfort. Inspired by Teen Magazine and Popeye Magazine, it explores a dichotomy between being surrounded by bright and eye-catching food with cultural ties but still feeling disconnected...</p>
-                </div>
-                <img src="sketch_placeholder.jpg" alt="Sketches of magazine layout">
-            </div>
-        </section>
-
-        <section id="challenges">
-            <div class="background-label">challenges</div>
-            <div class="section-header">Challenges & Problem-Solving</div>
-            <div class="content-box">
-                <p>One of the more challenging aspects of my magazine was developing a cohesive visual story across all of my images. Initially, I struggled to present the photos in a way that felt both unified and engaging while maintaining a dynamic layout...</p>
-            </div>
-        </section>
-
-        <section id="outcome">
-            <div class="background-label">concept</div>
-            <div class="section-header">Final Outcome / Impact</div>
-            <div class="content-box">
-                <p>I'm most proud of the full-spread page, as it gave me the chance to experiment with composition in a way that felt new and engaging while fully embracing the magazine's image-heavy, immersive style...</p>
-            </div>
-        </section>
+      <section id="outcome">
+        <div class="section-header">Final Outcome / Impact</div>
+        <div class="content-box">
+          <p>I'm most proud of the full-spread page, as it gave me the chance to experiment with composition in a way that felt new and engaging while fully embracing the magazine's image-heavy, immersive style...</p>
+        </div>
+      </section>
     </div>
 
-</body>
+  </body>
 </html>
