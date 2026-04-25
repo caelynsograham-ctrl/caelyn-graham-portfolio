@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
+    <title>Magazine Project</title>
 
+    <style>
+      :root {
+        --bg-color: #f2ede9;
+        --pink-accent: #d2798d;
+        --gray-widget: #d9d9d9;
+        --black: #232323;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 60px;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* MUCH WIDER CONTAINER */
+      .container {
+        width: 92vw;
+        max-width: 1400px;
+        position: relative;
+      }
+
+      /* Rabbit Logo (Top Right) */
+      .rabbit-fixed {
+        position: absolute;
+        top: -40px;
+        right: -20px;
+        width: 90px;
+        z-index: 10;
+      }
+
+      /* The Pink Header Section */
+      /* We use a flex container and a specific background trick to get that L-shape */
+      .header-section {
+        background-color: var(--pink-accent);
+        padding: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-radius: 25px;
+        /* This creates the "cutout" look on the bottom left */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 40% 65%, 0 65%);
+        min-height: 400px;
+      }
+
+      .header-section h1 {
+        font-size: 110px;
+        margin-left: 40px;
+        font-family: 'Unbounded', sans-serif;
+        color: white;
+        letter-spacing: -2px;
+        font-weight: 500;
+        line-height: 0.9;
+      }
+
+      .header-section img {
+        width: 420px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+
+      /* Content Grid */
+      .main-content {
+        display: grid;
+        grid-template-columns: 280px 150px 1fr;
+        gap: 30px;
+        margin-top: -120px;
+        /* Pulls the bottom content up into the cutout */
+        padding-left: 20px;
+        margin-top: -120px;
+
+      }
+
+      /* Left Gray Box */
+      .sidebar {
+        background-color: var(--gray-widget);
+        padding: 60px 30px;
+        height: 270px;
+        width: 450px;
+        display: flex;
+        align-items: flex-end;
+        font-size: 65px;
+        line-height: 0.9;
+        font-weight: 400;
+        color: var(--black);
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        justify-content: flex-end;
+        margin: 80px 0 50px 230px;
+
+        position: relative;
+        z-index: 5;
+        /* 👈 bring buttons above overlap */
+      }
+
+      .btn {
+
+
+        display: flex;
+        align-items: center;
+        /* vertical centering */
+        justify-content: center;
+        /* horizontal centering */
+
+        background-color: #2B2B2B;
+        color: #FFFFFF;
+
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 900;
+        font-size: 2rem;
+        text-transform: uppercase;
+
+        border: none;
+        cursor: pointer;
+
+        transition: all 0.2s ease;
+
+        width: 250px;
+        height: 60px;
+      }
+
+      /* Hover effect (same as your example) */
+      .btn:hover {
+        background-color: #D97388;
+        /* pink accent */
+        color: #2B2B2B;
+        transform: scale(1.05);
+      }
+
+      /* Description Text */
+      .details {
+        padding-top: 140px;
+        /* Space it below the pink header line */
+      }
+
+      .details h2 {
+        margin: 10 0 10px 350;
+        font-size: 62px;
+        font-weight: 500;
+        font-family: 'Unbounded', sans-serif;
+      }
+
+      .details p {
+        line-height: 1.2;
+        font-size: 18px;
+        color: #1a1a1a;
+        max-width: 500px;
+        margin: 10 0 10px 350;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="rabbit-fixed">
+        <a href="nav.html">
+          <img src="Graham_logo.png" alt="Logo" style="width:100%">
+        </a>
+      </div>
+      <header class="header-section">
+        <h1>MAGAZINE</h1>
+        <img src="your-image-here.jpg" alt="Magazine Content">
+      </header>
+
+      <div class="main-content">
+        <div class="sidebar">
+          Widget<br>for mag
+        </div>
+
+        <div class="buttons">
+          <button class="btn">PROCESS</button>
+          <button class="btn">PHOTOS</button>
+        </div>
+
+        <div class="details">
+          <h2>Description</h2>
+          <p>
+            This project involved creating a magazine that incorporates collage-style typography using letters found in everyday life. We were given full creative freedom in concept and design, we had to carefully consider typography, photography, and hierarchy to ensure the layouts remained clear and visually organized
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
