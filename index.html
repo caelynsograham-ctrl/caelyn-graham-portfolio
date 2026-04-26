@@ -180,6 +180,12 @@
         height: 380px;
         background-color: #ffffff;
       }
+      .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keeps image filling box without distortion */
+  display: block;
+}
 
       .carousel-item.inactive {
         background-color: var(--grey-box);
@@ -238,8 +244,11 @@
 </div>
       <div class="carousel-frame">
         <div class="carousel-track" id="track">
-          <div class="carousel-item"></div>
-          <div class="carousel-item"></div>
+<div class="carousel-item">
+  <a href="magazine.html" class="carousel-item">
+  <img src="cover.png" alt="Project image">
+</a>
+</div>          <div class="carousel-item"></div>
           <div class="carousel-item"></div>
           <div class="carousel-item inactive"></div>
         </div>

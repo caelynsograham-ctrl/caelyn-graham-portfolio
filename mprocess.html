@@ -20,6 +20,7 @@
         margin: 0;
         padding: 0;
         color: #333;
+        font-size: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -47,9 +48,9 @@
 
       /* Hero / Widget Area */
       .hero-section {
-        margin-top: 100px;
-       margin-left: -50px;
-        margin-bottom: 30px;
+        margin-top: 40px;
+        margin-left: -50px;
+        margin-bottom: 10px;
         padding: 20px;
       }
 
@@ -61,22 +62,26 @@
         margin-bottom: 80px;
       }
 
-     .nav-button {
-  background-color: #2e2e2e;
-  font-family: 'Unbounded', sans-serif;
-  color: white;
-  text-decoration: none;
+      .nav-button {
+        background-color: #2e2e2e;
+        font-family: 'Unbounded', sans-serif;
+        color: white;
+        text-decoration: none;
 
-  font-size: 1.4rem;
-  padding: 22px 18px;
+        font-size: 1.4rem;
+        padding: 22px 18px;
 
-  display: flex;              /* 👈 key fix */
-  justify-content: center;    /* horizontal center */
-  align-items: center;        /* vertical center */
+        display: flex;
+        /* 👈 key fix */
+        justify-content: center;
+        /* horizontal center */
+        align-items: center;
+        /* vertical center */
 
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
       .nav-button:hover {
         background-color: #D97388;
         color: #2B2B2B;
@@ -86,7 +91,7 @@
 
       /* Content Sections */
       section {
-        padding-top: 60px;
+        padding-top: 67px;
         /* Offset for scrolling */
         margin-bottom: 100px;
         position: relative;
@@ -111,12 +116,42 @@
         display: flex;
         gap: 20px;
         line-height: 1.6;
+
+        align-items: center;
+        /* 👈 THIS centers image vertically */
       }
 
       .content-box img {
         max-width: 300px;
-        height: auto;
+        max-height: 500px;
+        height: fixed;
         border: 1px solid #555;
+      }
+
+      .back-button {
+        position: fixed;
+        top: 45px;
+        left: 1240px;
+        z-index: 100;
+
+        background-color: #D97388;
+        color: #2B2B2B;
+
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 900;
+        font-size: 18px;
+
+        padding: 12px 18px;
+        text-decoration: none;
+
+        border-radius: 6px;
+
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .back-button:hover {
+        transform: scale(1.08);
+        opacity: 0.85;
       }
     </style>
   </head>
@@ -128,9 +163,13 @@
       </a>
     </div>
 
+    <a href="magazine.html" class="back-button">Back to<br> Magazine</a>
+
     <div class="container">
       <div class="hero-section">
-       <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1300px" height="600" src="https://embed.figma.com/design/Bkwf2HGDfaqg9uEH4XR2o7/Paper-Magazine--Mockup-with-Page-Animation--Community-?node-id=10002-10&embed-host=share" allowfullscreen></iframe>
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1300px" height="750" src="https://embed.figma.com/proto/Bkwf2HGDfaqg9uEH4XR2o7/Paper-Magazine--Mockup-with-Page-Animation--Community-?node-id=8001-777&p=f&scaling=min-zoom&content-scaling=fixed&page-id=6110%3A1899&starting-point-node-id=8001%3A777&embed-host=share" allowfullscreen></iframe>
+
+
       </div>
 
       <nav class="nav-bar">
@@ -143,7 +182,7 @@
         <div class="section-header">Concept / theme</div>
         <div class="content-box">
           <div>
-            <p>In my magazine <strong>I'm Hungry</strong>, the central idea is that food is comfort. Inspired by Teen Magazine and Popeye Magazine, it explores a dichotomy between being surrounded by bright and eye-catching food with cultural ties but still feeling disconnected...</p>
+            <p>In my magazine I’m Hungry, the central idea is that food is comfort. Inspired by Teen Magazine and Popeye Magazine, it explores a dichotomy between being surrounded by bright and eye-catching food with cultural ties but still feeling disconnected. I hoped to capture a longing for comfort. To engage a young adult audience, I used a bright, energetic color palette and an image-heavy layout that emphasizes visual storytelling. I paired collage-style typography on the cover with a clean sans-serif font for the rest, keeping the design dynamic while maintaining clarity.</p>
           </div>
           <img src="sketch.png" alt="Sketches of magazine layout">
         </div>
@@ -152,14 +191,18 @@
       <section id="challenges">
         <div class="section-header">Challenges & Problem-Solving</div>
         <div class="content-box">
-          <p>One of the more challenging aspects of my magazine was developing a cohesive visual story across all of my images. Initially, I struggled to present the photos in a way that felt both unified and engaging while maintaining a dynamic layout...</p>
+          <p>One of the more challenging aspects of my magazine was developing a cohesive visual story across all of my images. Initially, I struggled to present the photos in a way that felt both unified and engaging while still maintaining a dynamic and visually interesting layout. Finding the right balance between spacing, composition, and visual flow took multiple iterations and experimentation. I had to continuously adjust how the images interacted with one another so the pages felt connected rather than disconnected. This process pushed me to think more critically about visual storytelling and hierarchy, ultimately helping me create a more intentional and cohesive final design. It also helped me better understand how small layout decisions can significantly impact the overall mood and readability of a page.
+
+          </p>
         </div>
       </section>
 
       <section id="outcome">
         <div class="section-header">Final Outcome / Impact</div>
         <div class="content-box">
-          <p>I'm most proud of the full-spread page, as it gave me the chance to experiment with composition in a way that felt new and engaging while fully embracing the magazine's image-heavy, immersive style...</p>
+          <p>I’m most proud of the full-spread page, as it gave me the opportunity to experiment with composition in a way that felt new and engaging while fully embracing the magazine’s image-heavy, immersive style. It allowed me to push the layout further and think more intentionally about how images can guide the viewer’s eye across a spread. I’m also really happy with the soda wall page, which stands out against the more minimal layouts used throughout the rest of the magazine. Because much of the design relies on white space, this page creates a strong contrast and brings a pop of energy. Overall, these pages helped define the visual identity of the magazine and made the final outcome feel more complete and dynamic. They also strengthened the rhythm of the magazine by balancing quieter sections with more visually intense moments.
+
+          </p>
         </div>
       </section>
     </div>
