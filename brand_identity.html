@@ -1,80 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princess Cafe Style Guide</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-    <div class="container">
-        <header class="main-header">
-            <h1>Movies Don’t<br>Stop At The Door</h1>
-        </header>
+    <title>Princess Cafe | Case Study</title>
 
-        <section class="logo-grid">
-            <div class="logo-box pink-bg"><img src="logo1.png" alt="Princess Cafe Logo"></div>
-            <div class="logo-box dark-bg"><img src="logo2.png" alt="Princess Cafe Badge"></div>
-            <div class="logo-box pink-bg"><img src="mascot.png" alt="Mascot"></div>
-        </section>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/qgo3fct.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qgo3fct.css">
 
-        <section class="brand-info">
-            <div class="colorway">
-                <h2>COLORWAY</h2>
-                <div class="color-blocks">
-                    <div class="color-bar black" data-hex="#222222"></div>
-                    <div class="color-row">
-                        <div class="color-square cream" data-hex="#F5F1E6"></div>
-                        <div class="color-stack">
-                            <div class="color-mini pink" data-hex="#D98295"></div>
-                            <div class="color-mini green" data-hex="#A0C4B8"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="typography">
-                <h2>Typography</h2>
-                <div class="font-spec">
-                    <p class="label">PRIMARY FONT</p>
-                    <p class="font-name primary">HOBEAUX - BLACK</p>
-                    <hr>
-                    <p class="label">Secondary FONT</p>
-                    <p class="font-name secondary">Brevia - Semibold</p>
-                </div>
-            </div>
-        </section>
 
-        <section class="packaging dark-bg">
-            <div class="packaging-images">
-                <img src="cups1.jpg" alt="Packaging Concept 1">
-                <img src="cups2.jpg" alt="Packaging Concept 2">
-            </div>
-            <div class="packaging-text">
-                <h3>PRODUCT PACKAGING</h3>
-                <p>I chose to make disposable cup packaging. They are something customers carry outside the cafe, functioning as a moving advertisement. I also liked this idea because it gave me the chance to design something visually appealing while still being practical and useful.</p>
-            </div>
-        </section>
+    <style>
+      :root {
+        --bg: #F2EDE9;
+        --pink: #D2798D;
+        --dark: #232323;
+        --green: #A0C4B8;
+      }
 
-        <section class="merchandise">
-            <h2>MERCHANDISE</h2>
-            <div class="merch-grid">
-                <div class="merch-large">
-                    <img src="hoodie-pink.jpg" alt="Pink Hoodie">
-                    <img src="hoodie-green.jpg" alt="Green Hoodie">
-                </div>
-                <div class="merch-small-stack">
-                    <div class="totes">
-                        <img src="tote-pink.jpg" alt="Pink Tote">
-                        <img src="tote-cream.jpg" alt="Cream Tote">
-                    </div>
-                    <div class="cups-row">
-                        <img src="cups-all.jpg" alt="All Cup Designs">
-                    </div>
-                </div>
-            </div>
-        </section>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--bg);
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: var(--dark);
+        line-height: 1.4;
+        overflow-x: hidden;
+      }
+
+      /* Main centered content */
+      .page-wrapper {
+        max-width: 1300px;
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 0;
+      }
+
+      /* Sticky Rabbit */
+      .rabbit-sticky {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 90px;
+        z-index: 100;
+        transition: transform 0.3s ease;
+      }
+
+      .rabbit-sticky:hover {
+        transform: scale(1.1);
+      }
+      
+
+      img {
+        max-width: 100%;
+        display: block;
+        border-radius: 6px;
+      }
+
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: -.5px;
+        text-align: center;
+      }
+
+      /* HERO */
+      .hero {
+        background-color: var(--dark);
+        color: white;
+        padding: 240px 40px;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        line-height: 0.9;
+      }
+
+      /* BRAND STRIP */
+      .brand-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 250px;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .brand-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .brand-box img {
+        max-width: 80%;
+      }
+
+      .pink {
+        background-color: var(--pink);
+      }
+
+      .dark {
+        background-color: var(--dark);
+      }
+
+      /* FULL WIDTH SPECS SECTION */
+      .specs-wrapper {
+        background-color: var(--pink);
+
+        width: 100vw;
+        height: 31vw;
+        margin-left: calc(50% - 50vw);
+
+        padding: 70px 0;
+      }
+
+      .specs-inner {
+        max-width: 1300px;
+        width: 95%;
+        margin: 0 auto;
+      }
+
+      .specs-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      .spec-card h2 {
+        color: white;
+        font-size: 2.3rem;
+        margin-bottom: 20px;
+      }
+
+      .spec-card p,
+      .label,
+      .font-bold,
+      .font-light {
+        color: white;
+      }
+
+      /* Color Palette */
+      .swatch-main {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        color: white;
+        font-size: 0.8rem;
+      }
+
+      .swatch-sub-row {
+        display: flex;
+        gap: 8px;
+        height: 120px;
+        margin-top: 8px;
+      }
+
+      .swatch {
+        flex: 2;
+        padding: 15px;
+        font-size: 0.8rem;
+      }
+
+      .swatch-stack {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .swatch-mini {
+        flex: 1;
+      }
+
+      /* =========================
+   FONTS
+========================= */
+
+
+
+      /* Primary label text */
+      .label {
+        font-weight: 600;
+        font-size: .9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      /* Hobeaux usage */
+      .font-bold {
+        font-family: "hobeaux", sans-serif;
+        margin: -20px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 3.3rem;
+        letter-spacing: -0.4px;
+        text-align: center;
+
+      }
+
+      /* Brevia usage */
+      .font-light {
+        font-family: "brevia", sans-serif;
+        margin: -20px;
+        font-weight: 600;
+        font-size: 3.3rem;
+        text-align: center;
+
+      }
+
+      hr {
+        border: none;
+        border-top: 2px solid white;
+        margin: 20px 0;
+      }
+
+      /* FULL WIDTH PACKAGING SECTION */
+      .packaging-box {
+        background-color: var(--dark);
+        color: white;
+
+        width: 100vw;
+        height: 31.5vw;
+        margin-left: calc(50% - 50vw);
+
+        padding: 70px 0;
+      }
+
+      .packaging-inner {
+        max-width: 1300px;
+        width: 95%;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .img-group {
+        display: flex;
+        gap: 15px;
+      }
+
+      .img-group img {
+        width: 200px;
+        height: 280px;
+        object-fit: cover;
+      }
+
+      .text-content {
+        max-width: 550px;
+      }
+
+      .text-content h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      .text-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      /* MERCH */
+      .merch-section h2 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+      }
+
+      .merch-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 15px;
+      }
+
+      .merch-large {
+        display: flex;
+        gap: 10px;
+      }
+
+      .merch-large img {
+        width: 100%;
+      }
+
+      .merch-small {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .tote-row {
+        display: flex;
+        gap: 10px;
+      }
+
+      .full-width {
+        width: 100%;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+
+        .hero {
+          padding: 120px 20px;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .brand-strip,
+        .specs-grid,
+        .merch-grid,
+        .packaging-inner,
+        .merch-large,
+        .tote-row,
+        .img-group {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+        }
+
+        .specs-wrapper,
+        .packaging-box {
+          padding: 50px 0;
+        }
+
+        .img-group img {
+          width: 100%;
+          height: auto;
+        }
+
+        .merch-section h2 {
+          font-size: 2.5rem;
+        }
+      }
+      .back-button {
+        position: fixed;
+        top: 870px;
+        left: 1400px;
+        z-index: 100;
+
+        background-color: #D97388;
+        color: #2B2B2B;
+
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 900;
+        font-size: 18px;
+
+        padding: 12px 18px;
+        text-decoration: none;
+
+        border-radius: 6px;
+
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .back-button:hover {
+        transform: scale(1.08);
+        background-color: white;
+          
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Sticky Logo -->
+    <div class="rabbit-sticky">
+      <a href="nav.html">
+        <img src="Graham_logo.png" alt="Logo">
+      </a>
+    </div>
+      <a href="rebranding.html" class="back-button">BACK</a>
+
+    <div class="page-wrapper">
+
+      <!-- HERO -->
+      <header class="hero">
+        <div class="hero-content">
+          <h1>Movies Don't<br>Stop At The Door</h1>
+        </div>
+      </header>
+
+      <!-- BRAND STRIP -->
+      <section class="brand-strip">
+
+        <div class="brand-box pink">
+          <img src="logo_left.png" alt="Logo Left">
+        </div>
+
+        <div class="brand-box dark">
+          <img src="logo_center.png" alt="Logo Center">
+        </div>
+
+        <div class="brand-box pink">
+          <img src="logo_right.png" alt="Mascot">
+        </div>
+
+      </section>
+
     </div>
 
-</body>
+    <!-- FULL WIDTH SPECS -->
+    <section class="specs-wrapper">
+
+      <div class="specs-inner">
+
+        <div class="specs-grid">
+
+          <!-- COLORWAY -->
+          <div class="spec-card">
+
+<h2 style="font-size: 65px; color: #2B2B2B; position: relative; top: -40px;">
+  Colorway
+</h2>
+            <div class="palette">
+
+              <div class="swatch-main" style="background:#262626;font-family: 'Unbounded', sans-serif; font-size: 15px;   padding:45px 10px 10px 10px">
+               <strong>#262626</strong> 
+              </div>
+
+              <div class="swatch-sub-row">
+
+                <div class="swatch" style="background:#F2EDE9; color:#232323;font-family: 'Unbounded', sans-serif; font-size: 15px;           padding:90px 10px 10px 10px;">
+                  <strong> #F3EADF</strong>
+                </div>
+
+                <div class="swatch-stack">
+                  <div class="swatch-mini" style="background:#F1BBCF; color:#232323;font-family: 'Unbounded', sans-serif; font-size: 15px;          padding:25px 10px 10px 10px;"><strong>#F1BBCF</strong> </div>
+                  <div class="swatch-mini" style="background:#9BBFB2; color:#232323;font-family: 'Unbounded', sans-serif; font-size: 15px;          padding:25px 10px 10px 10px;"><strong>#9BBFB2</strong></div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- TYPOGRAPHY -->
+          <div class="spec-card">
+
+            <h2 style="font-size: 65px; color: #2B2B2B; position: relative; top: -40px;">Typography</h2>
+
+            <div class="type-info">
+
+              <p class="label">Primary Font</p>
+              <p class="font-bold">Hobeaux Black</p>
+              <hr>
+
+              <p class="label">Secondary Font</p>
+              <p class="font-light">Brevia Semibold</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    
+
+    <!-- FULL WIDTH PACKAGING -->
+    <section class="packaging-box">
+
+      <div class="packaging-inner">
+
+        <div class="img-group">
+          <img src="cup_mockup1.jpg" alt="Cup Mockup 1">
+          <img src="cup_mockup2.jpg" alt="Cup Mockup 2">
+        </div>
+
+        <div class="text-content">
+
+          <h3>Product Packaging</h3>
+
+          <p>
+            I chose to make disposable cup packaging because they travel outside the cafe
+            with customers, acting as moving advertisements. This gave me the opportunity
+            to create something visually engaging while still serving a practical purpose.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- MERCH -->
+    <div class="page-wrapper">
+
+      <section class="merch-section">
+
+        <h2>Merchandise</h2>
+
+        <div class="merch-grid">
+
+          <div class="merch-large">
+            <img src="hoodie1.jpg" alt="Pink Hoodie">
+            <img src="hoodie2.jpg" alt="Green Hoodie">
+          </div>
+
+          <div class="merch-small">
+
+            <div class="tote-row">
+              <img src="tote1.jpg" alt="Pink Tote">
+              <img src="tote2.jpg" alt="Cream Tote">
+            </div>
+
+            <img src="all_cups.jpg" alt="Cup Collection" class="full-width">
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </body>
+
 </html>

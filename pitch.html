@@ -1,1 +1,213 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
+
+    <title>I'm Hungry - Magazine Project</title>
+    <style>
+      /* General Styles */
+      html {
+        scroll-behavior: smooth;
+        /* This makes the jumping look like scrolling */
+      }
+
+      body {
+        background-color: #f2ede9;
+        /* Light beige background from image */
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Sticky Rabbit Button */
+      .rabbit-sticky {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 90px;
+        z-index: 100;
+        transition: transform 0.3s ease;
+      }
+
+      .rabbit-sticky:hover {
+        transform: scale(1.1);
+      }
+
+      /* Main Container */
+      .container {
+        max-width: 1200px;
+        width: 95%;
+      }
+
+      /* Hero / Widget Area */
+      .hero-section {
+        margin-top: 40px;
+        margin-left: -50px;
+        margin-bottom: 10px;
+        padding: 20px;
+      }
+
+      /* Navigation Buttons */
+      .nav-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 80px;
+      }
+
+      .nav-button {
+        background-color: #2e2e2e;
+        font-family: 'Unbounded', sans-serif;
+        color: white;
+        text-decoration: none;
+
+        font-size: 1.4rem;
+        padding: 22px 18px;
+
+        display: flex;
+        /* 👈 key fix */
+        justify-content: center;
+        /* horizontal center */
+        align-items: center;
+        /* vertical center */
+
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .nav-button:hover {
+        background-color: #D97388;
+        color: #2B2B2B;
+        transform: scale(1.05);
+      }
+
+
+      /* Content Sections */
+      section {
+        padding-top: 67px;
+        /* Offset for scrolling */
+        margin-bottom: 100px;
+        position: relative;
+      }
+
+      .section-header {
+        color: #D97388;
+        display: inline-block;
+        padding: 10px 40px;
+        margin-bottom: 20px;
+        margin-left: -45px;
+        font-size: 52px;
+        font-weight: 500;
+        font-family: 'Unbounded', sans-serif;
+
+      }
+
+      .content-box {
+        background-color: #2e2e2e;
+        color: white;
+        padding: 30px;
+        display: flex;
+        gap: 20px;
+        line-height: 1.6;
+
+        align-items: center;
+        /* 👈 THIS centers image vertically */
+      }
+
+      .content-box img {
+        max-width: 300px;
+        max-height: 500px;
+        height: fixed;
+        border: 1px solid #555;
+      }
+
+       .back-button {
+        position: fixed;
+        top: 870px;
+        left: 1400px;
+        z-index: 100;
+
+        background-color: #D97388;
+        color: #2B2B2B;
+
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 900;
+        font-size: 18px;
+
+        padding: 12px 18px;
+        text-decoration: none;
+
+        border-radius: 6px;
+
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .back-button:hover {
+        transform: scale(1.08);
+        background-color: white;
+          
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="rabbit-sticky">
+      <a href="nav.html">
+        <img src="Graham_logo.png" alt="Logo" style="width:100%">
+      </a>
+    </div>
+
+    <a href="rebranding.html" class="back-button">BACK</a>
+
+    <div class="container">
+      <div class="hero-section">
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1300px" height="750" src="https://embed.figma.com/proto/Bkwf2HGDfaqg9uEH4XR2o7/Paper-Magazine--Mockup-with-Page-Animation--Community-?node-id=8001-777&p=f&scaling=min-zoom&content-scaling=fixed&page-id=6110%3A1899&starting-point-node-id=8001%3A777&embed-host=share" allowfullscreen></iframe>
+
+
+      </div>
+
+      <nav class="nav-bar">
+        <a href="#critique" class="nav-button">Brand Critique</a>
+        <a href="#idea" class="nav-button">Big Idea</a>
+        <a href="#media" class="nav-button">Social Media Plan</a>
+      </nav>
+
+      <section id="critique">
+        <div class="section-header">Concept / theme</div>
+        <div class="content-box">
+          <div>
+            <p>Princess Cafe has a strong local presence and community appeal through its connection to the Princess Cinema, but its branding feels inconsistent. The dark, nearly all-black exterior and low-contrast signage make it easy to overlook, a problem echoed in its muted website with a hard-to-read logo. While the cafe offers a warm, nostalgic, and community-focused experience, its visual identity lacks clarity and energy. Improving signage, logo visibility, and the website design would better reflect its vibrant personality and help attract new visitors.</p>
+          </div>
+          <img src="sketch.png" alt="Sketches of magazine layout">
+        </div>
+      </section>
+
+      <section id="idea">
+        <div class="section-header">Challenges & Problem-Solving</div>
+        <div class="content-box">
+          <p>Princess Cafe should be designed to be the natural extension of Princess Cinema. “Twin Princesses ” creating one seamless experience. By oﬀering themed food and drinks inspired by the films currently showing, along with ticket-based deals and rotating promotions, the movie night begins before guests even take their seats. The cafe becomes the opening scene; turning a simple trip to the theater into a shared, immersive experience.
+
+          </p>
+        </div>
+      </section>
+
+      <section id="media">
+        <div class="section-header">Final Outcome / Impact</div>
+        <div class="content-box">
+          <p>Media...
+
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </body>
+</html>
