@@ -47,12 +47,44 @@
         width: 95%;
       }
 
-      /* Hero / Widget Area */
+     /* Updated Hero / Hello Princess Area */
       .hero-section {
+        background-color: #D97388; /* The pink background */
         margin-top: 40px;
-        margin-left: -50px;
-        margin-bottom: 10px;
-        padding: 20px;
+        border-radius: 8px; /* Matches your layout style */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 60px;
+        min-height: 400px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .hero-text-wrap h1 {
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 900;
+        font-size: 100px; /* Large high-impact font */
+        color: #2e2e2e;
+        line-height: 0.9;
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      .hero-image-wrap img {
+        height: 350px; /* Adjust based on your character image size */
+        width: auto;
+        display: block;
+      }
+
+      /* Adjust Nav Bar to sit closely under the pink hero */
+      .nav-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-top: 20px; /* Small gap between pink box and buttons */
+        margin-bottom: 80px;
+        width: 100%;
       }
 
       /* Navigation Buttons */
@@ -168,12 +200,17 @@
     <a href="rebranding.html" class="back-button">BACK</a>
 
     <div class="container">
+      
       <div class="hero-section">
-        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1300px" height="750" src="https://embed.figma.com/proto/Bkwf2HGDfaqg9uEH4XR2o7/Paper-Magazine--Mockup-with-Page-Animation--Community-?node-id=8001-777&p=f&scaling=min-zoom&content-scaling=fixed&page-id=6110%3A1899&starting-point-node-id=8001%3A777&embed-host=share" allowfullscreen></iframe>
-
-
+        <div class="hero-text-wrap">
+          <h1>Hello<br>Princess</h1>
+        </div>
+        <div class="hero-image-wrap">
+          <img src="character.png" alt="Princess Character">
+        </div>
       </div>
 
+  
       <nav class="nav-bar">
         <a href="#critique" class="nav-button">Brand Critique</a>
         <a href="#idea" class="nav-button">Big Idea</a>
