@@ -281,40 +281,51 @@
       }
 
       /* MERCH */
-      .merch-section h2 {
-        font-size: 3.5rem;
-        margin-bottom: 20px;
-      }
+     .merch-section h2 {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+}
 
-      .merch-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 15px;
-      }
+.merch-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
 
-      .merch-large {
-        display: flex;
-        gap: 10px;
-      }
+/* LEFT SIDE (hoodies) */
+.merch-large {
+  display: flex;
+  gap: 25px;
+}
 
-      .merch-large img {
-        width: 100%;
-      }
+.merch-large img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-      .merch-small {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
+/* RIGHT SIDE */
+.merch-small {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 
-      .tote-row {
-        display: flex;
-        gap: 10px;
-      }
+/* tote row spacing */
+.tote-row {
+  display: flex;
+  gap: 25px;
+}
 
-      .full-width {
-        width: 100%;
-      }
+.tote-row img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* stacked images spacing */
+.merch-small img.full-width {
+  width: 100%;
+  border-radius: 10px;
+}
 
       /* Responsive */
       @media (max-width: 768px) {
@@ -520,18 +531,18 @@
             <img src="rebrandimages/hoodieP.png" alt="Pink Hoodie">
           </div>
 
-          <div class="merch-small">
+         <div class="merch-small">
 
-            <div class="tote-row">
-              <img src="rebrandimages/toatP.png" alt="Pink Tote">
-              <img src="rebrandimages/toteB.png" alt="Cream Tote">
-            </div>
+  <div class="tote-row">
+    <img src="rebrandimages/toatP.png" alt="Pink Tote">
+    <img src="rebrandimages/toteB.png" alt="Cream Tote">
+  </div>
 
-            <img src="rebrandimages/cups.png" alt="Cup Collection" class="full-width">
-              <img src="rebrandimages/mugs.png" alt="Cup Collection" class="full-width">
+  <img src="rebrandimages/cups.png" class="full-width" alt="Cup Collection">
 
-          </div>
+  <img src="rebrandimages/mugs.png" class="full-width" alt="Mugs">
 
+</div>
         </div>
 
       </section>
