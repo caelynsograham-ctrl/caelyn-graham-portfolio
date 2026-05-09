@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,34 +46,70 @@
         width: 95%;
       }
 
-     /* Updated Hero / Hello Princess Area */
+      /* Updated Hero / Hello Princess Area */
       .hero-section {
-        background-color: #D97388; /* The pink background */
+        background-color: #D97388;
+        /* The pink background */
         margin-top: 40px;
-        border-radius: 8px; /* Matches your layout style */
+        border-radius: 8px;
+        /* Matches your layout style */
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 40px 60px;
-        min-height: 400px;
+        height: 700px;
         width: 100%;
         box-sizing: border-box;
       }
 
-      .hero-text-wrap h1 {
-        font-family: 'Unbounded', sans-serif;
-        font-weight: 900;
-        font-size: 100px; /* Large high-impact font */
-        color: #2e2e2e;
-        line-height: 0.9;
-        margin: 0;
-        text-transform: uppercase;
+      /* General shared hero text styles */
+.hero-text {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 100px;
+  color: #2e2e2e;
+
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin: 0;
+
+  position: relative;
+
+  
+}
+
+/* Hello-specific adjustments */
+.hero-hello {
+  right: -240px;
+  top: -120px;
+  transform: scale(1.3, 4);
+}
+
+/* Princess-specific adjustments */
+.hero-princess {
+  right: -95px;
+  top: 130px;
+  transform: scale(0.85, 4);
+}
+
+      .hero-image-wrap {
+        width: 300px;
+        /* controls layout space */
+        overflow: visible;
+        position: relative;
       }
 
       .hero-image-wrap img {
-        height: 350px; /* Adjust based on your character image size */
-        width: auto;
-        display: block;
+        width: 100%;
+        height: auto;
+
+        transform: scale(2.5);
+        /* makes sticker visually bigger */
+        transform-origin: left center;
+
+        position: relative;
+        left: -180px;
+        /* optional positioning tweak */
       }
 
       /* Adjust Nav Bar to sit closely under the pink hero */
@@ -82,19 +117,13 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
-        margin-top: 20px; /* Small gap between pink box and buttons */
+        margin-top: 20px;
+        /* Small gap between pink box and buttons */
         margin-bottom: 80px;
         width: 100%;
       }
 
-      /* Navigation Buttons */
-      .nav-bar {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin-bottom: 80px;
-      }
-
+     
       .nav-button {
         background-color: #2e2e2e;
         font-family: 'Unbounded', sans-serif;
@@ -153,15 +182,25 @@
         align-items: center;
         /* 👈 THIS centers image vertically */
       }
+      .image-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.image-row img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
 
       .content-box img {
-        max-width: 300px;
-        max-height: 500px;
-        height: fixed;
-        border: 1px solid #555;
+        width: 1130px; 
+        height: 650px
       }
 
-       .back-button {
+      .back-button {
         position: fixed;
         top: 870px;
         left: 1400px;
@@ -185,7 +224,7 @@
       .back-button:hover {
         transform: scale(1.08);
         background-color: white;
-          
+
       }
     </style>
   </head>
@@ -200,18 +239,23 @@
     <a href="rebranding.html" class="back-button">BACK</a>
 
     <div class="container">
-      
+
       <div class="hero-section">
         <div class="hero-image-wrap">
-          <img src="character.png" alt="Princess Character">
+          <img src="rebrandimages/Stick2.png" alt="Princess Character">
         </div>
         <div class="hero-text-wrap">
-          <h1>Hello<br>Princess</h1>
-        </div>
-        
+  <div class="hero-text hero-hello">
+    Hello
+  </div>
+
+  <div class="hero-text hero-princess">
+    Princess
+  </div>
+</div>
       </div>
 
-  
+
       <nav class="nav-bar">
         <a href="#critique" class="nav-button">Brand Critique</a>
         <a href="#idea" class="nav-button">Big Idea</a>
@@ -219,30 +263,33 @@
       </nav>
 
       <section id="critique">
-        <div class="section-header">Concept / theme</div>
+        <div class="section-header">Brand System Review</div>
         <div class="content-box">
           <div>
             <p>Princess Cafe has a strong local presence and community appeal through its connection to the Princess Cinema, but its branding feels inconsistent. The dark, nearly all-black exterior and low-contrast signage make it easy to overlook, a problem echoed in its muted website with a hard-to-read logo. While the cafe offers a warm, nostalgic, and community-focused experience, its visual identity lacks clarity and energy. Improving signage, logo visibility, and the website design would better reflect its vibrant personality and help attract new visitors.</p>
+         <div class="image-row">
+  <img src="rebrandimages/cafe.png" alt="Cafe">
+  <img src="rebrandimages/location.png" alt="Location">
+</div>
           </div>
-          <img src="sketch.png" alt="Sketches of magazine layout">
+          
         </div>
       </section>
 
       <section id="idea">
-        <div class="section-header">Challenges & Problem-Solving</div>
+        <div class="section-header">Rebranding Concept</div>
         <div class="content-box">
-          <p>Princess Cafe should be designed to be the natural extension of Princess Cinema. “Twin Princesses ” creating one seamless experience. By oﬀering themed food and drinks inspired by the films currently showing, along with ticket-based deals and rotating promotions, the movie night begins before guests even take their seats. The cafe becomes the opening scene; turning a simple trip to the theater into a shared, immersive experience.
+          <p>Princess Cafe should be designed to be an extension of Princess Cinema. “Twin Princesses ” creating one seamless experience. By oﬀering themed food and drinks inspired by the films currently showing, along with ticket-based deals and rotating promotions, the movie night begins before guests even take their seats. The cafe becomes the opening scene; turning a simple trip to the theater into a shared, immersive experience.
 
           </p>
         </div>
       </section>
 
       <section id="media">
-        <div class="section-header">Final Outcome / Impact</div>
+        <div class="section-header">Engagement Strategy</div>
         <div class="content-box">
-          <p>Media...
-
-          </p>
+          <img src="rebrandimages/socialMedia.png" alt="Sketches of magazine layout">
+         
         </div>
       </section>
     </div>

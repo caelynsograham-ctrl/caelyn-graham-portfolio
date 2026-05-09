@@ -58,7 +58,7 @@
       .rabbit-sticky:hover {
         transform: scale(1.1);
       }
-      
+
 
       img {
         max-width: 100%;
@@ -87,6 +87,7 @@
       }
 
       .hero h1 {
+        transform: scale(1.5, 4);
         font-size: 4rem;
         line-height: 0.9;
       }
@@ -95,7 +96,7 @@
       .brand-strip {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        height: 250px;
+        height: 500px;
         overflow: hidden;
         border-radius: 8px;
       }
@@ -239,7 +240,7 @@
         color: white;
 
         width: 100vw;
-        height: 31.5vw;
+        height: 35vw;
         margin-left: calc(50% - 50vw);
 
         padding: 70px 0;
@@ -261,9 +262,14 @@
       }
 
       .img-group img {
-        width: 200px;
-        height: 280px;
+        width: 280px;
+        height: 380px;
         object-fit: cover;
+      }
+
+      .img-group-mid img {
+        width: 480px;
+        height: 380px;
       }
 
       .text-content {
@@ -280,52 +286,89 @@
         line-height: 1.7;
       }
 
-      /* MERCH */
-     .merch-section h2 {
-  font-size: 3.5rem;
-  margin-bottom: 40px;
-}
+      /* =========================
+   MERCH SECTION
+========================= */
 
-.merch-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-}
+      .merch-section h2 {
+        margin: 0;
 
-/* LEFT SIDE (hoodies) */
-.merch-large {
-  display: flex;
-  gap: 25px;
-}
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        transform: scale(1.37, 6) translateY(2vw) translateX(-16vw);
+      }
 
-.merch-large img {
-  width: 100%;
-  border-radius: 10px;
-}
+      .merch-grid {
+        margin-top: 1px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
 
-/* RIGHT SIDE */
-.merch-small {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
+      /* =========================
+   LEFT SIDE — HOODIES
+========================= */
 
-/* tote row spacing */
-.tote-row {
-  display: flex;
-  gap: 25px;
-}
+      .merch-large {
+        display: flex;
+        gap: 25px;
 
-.tote-row img {
-  width: 100%;
-  border-radius: 10px;
-}
+        position: relative;
+        left: -60px;
+        bottom: -330px;
+      }
 
-/* stacked images spacing */
-.merch-small img.full-width {
-  width: 100%;
-  border-radius: 10px;
-}
+      .merch-large img {
+        width: 370px;
+        height: 550px;
+
+        object-fit: fill;
+        border-radius: 10px;
+      }
+
+      /* =========================
+   RIGHT SIDE
+========================= */
+
+      .merch-small {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      /* Tote row */
+      .tote-row {
+        display: flex;
+        gap: 25px;
+      }
+
+      .tote-row img {
+        width: 50%;
+        height: 270px;
+
+        object-fit: fill;
+        border-radius: 10px;
+        margin-bottom: 10px;
+
+      }
+
+      /* Cups + mugs vertical rectangle styling */
+      .merch-vertical {
+        width: 100%;
+        height: 280px;
+
+        object-fit: cover;
+        object-position: center;
+
+        border-radius: 10px;
+      }
+
+      /* stacked images spacing */
+      .merch-small img.full-width {
+        width: 50%;
+        border-radius: 10px;
+      }
 
       /* Responsive */
       @media (max-width: 768px) {
@@ -364,6 +407,7 @@
           font-size: 2.5rem;
         }
       }
+
       .back-button {
         position: fixed;
         top: 870px;
@@ -388,7 +432,7 @@
       .back-button:hover {
         transform: scale(1.08);
         background-color: white;
-          
+
       }
     </style>
   </head>
@@ -401,7 +445,7 @@
         <img src="Graham_logo.png" alt="Logo">
       </a>
     </div>
-      <a href="rebranding.html" class="back-button">BACK</a>
+    <a href="rebranding.html" class="back-button">BACK</a>
 
     <div class="page-wrapper">
 
@@ -441,13 +485,13 @@
           <!-- COLORWAY -->
           <div class="spec-card">
 
-<h2 style="font-size: 65px; color: #2B2B2B; position: relative; top: -40px;">
-  Colorway
-</h2>
+            <h2 style="font-size: 65px; color: #2B2B2B; position: relative; top: -40px;">
+              Colorway
+            </h2>
             <div class="palette">
 
               <div class="swatch-main" style="background:#262626;font-family: 'Unbounded', sans-serif; font-size: 15px;   padding:45px 10px 10px 10px">
-               <strong>#262626</strong> 
+                <strong>#262626</strong>
               </div>
 
               <div class="swatch-sub-row">
@@ -489,7 +533,7 @@
       </div>
 
     </section>
-    
+
 
     <!-- FULL WIDTH PACKAGING -->
     <section class="packaging-box">
@@ -497,8 +541,11 @@
       <div class="packaging-inner">
 
         <div class="img-group">
-          <img src="rebrandimages/cup_mockup1.jpg" alt="Cup Mockup 1">
-          <img src="rebrandimages/cup_mockup2.jpg" alt="Cup Mockup 2">
+          <img src="rebrandimages/product1.png" alt="Cup Mockup 1">
+
+        </div>
+        <div class="img-group-mid">
+          <img src="rebrandimages/product2.png" alt="Cup Mockup 2">
         </div>
 
         <div class="text-content">
@@ -531,18 +578,18 @@
             <img src="rebrandimages/hoodieP.png" alt="Pink Hoodie">
           </div>
 
-         <div class="merch-small">
+          <div class="merch-small">
 
-  <div class="tote-row">
-    <img src="rebrandimages/toatP.png" alt="Pink Tote">
-    <img src="rebrandimages/toteB.png" alt="Cream Tote">
-  </div>
+            <div class="tote-row">
+              <img src="rebrandimages/toatP.png" alt="Pink Tote">
+              <img src="rebrandimages/toteB.png" alt="Cream Tote">
+            </div>
 
-  <img src="rebrandimages/cups.png" class="full-width" alt="Cup Collection">
+            <img src="rebrandimages/cups.png" class="merch-vertical" alt="Cup Collection">
 
-  <img src="rebrandimages/mugs.png" class="full-width" alt="Mugs">
+            <img src="rebrandimages/mugs.png" class="merch-vertical" alt="Mugs">
 
-</div>
+          </div>
         </div>
 
       </section>
