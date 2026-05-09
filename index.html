@@ -209,6 +209,7 @@
       }
 
       .about-content h2 {
+                color: #2B2B2B;
         font-size: clamp(2.5rem, 6vw, 6rem);
         margin-bottom: 20px;
       }
@@ -243,6 +244,8 @@
         font-size: clamp(2.5rem, 6vw, 6rem);
         margin-bottom: 30px;
         text-align: center;
+                color: #2B2B2B;
+
       }
 
       .carousel-frame {
@@ -290,6 +293,10 @@
         height: 100%;
         object-fit: cover;
       }
+         .carousel-item.wide {
+  width: 650px;   /* make it wider */
+  min-width: 500px;
+}
 
       /* TABLET */
 
@@ -338,6 +345,7 @@
     border-radius: 14px;
   }
 }
+   
       /* =========================
    BUTTONS
 ========================= */
@@ -436,7 +444,11 @@
             </a>
           </div>
 
-          <div class="carousel-item"></div>
+         <div class="carousel-item wide">
+  <a href="rebranding.html">
+    <img src="rebrandCover.png" alt="Project">
+  </a>
+</div>
           <div class="carousel-item"></div>
           <div class="carousel-item"></div>
 
