@@ -132,7 +132,7 @@
 
         font-size: 1.4rem;
         padding: 22px 18px;
-                z-index: 100;
+        z-index: 100;
 
 
         display: flex;
@@ -185,7 +185,7 @@
         /* 👈 THIS centers image vertically */
       }
 
-     
+
       .content-box img {
         width: 1130px;
         height: 650px
@@ -216,6 +216,232 @@
         transform: scale(1.08);
         background-color: white;
 
+      }
+
+      /* =========================================
+   TABLET RESPONSIVE
+========================================= */
+      @media (max-width: 1024px) {
+
+        body {
+          padding: 20px;
+          font-size: 22px;
+        }
+
+        .rabbit-sticky {
+          width: 70px;
+          top: 15px;
+          right: 15px;
+        }
+
+        .container {
+          width: 100%;
+        }
+
+        /* HERO */
+
+        .hero-section {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          height: auto;
+          padding: 80px 40px;
+          gap: 60px;
+
+          text-align: center;
+        }
+
+        .hero-image-wrap {
+          width: 260px;
+        }
+
+        .hero-image-wrap img {
+          transform: scale(1.6);
+          left: 0;
+        }
+
+        .hero-text-wrap {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .hero-text {
+          position: static;
+          font-size: 4rem;
+          transform: none;
+          line-height: 1;
+        }
+
+        /* NAV */
+
+        .nav-bar {
+          grid-template-columns: 1fr;
+          margin-bottom: 60px;
+        }
+
+        .nav-button {
+          font-size: 1.2rem;
+          padding: 18px;
+        }
+
+        /* CONTENT */
+
+        section {
+          margin-bottom: 70px;
+          padding-top: 40px;
+        }
+
+        .section-header {
+          margin-left: 0;
+          font-size: 3rem;
+          text-align: center;
+          display: block;
+          padding: 10px 0;
+        }
+
+        .content-box {
+          flex-direction: column;
+          padding: 25px;
+          gap: 25px;
+        }
+
+        .content-box p {
+          font-size: 1.05rem;
+          line-height: 1.7;
+        }
+
+        .content-box img {
+          width: 100% !important;
+          height: auto !important;
+          max-width: 100%;
+        }
+
+        .image-row {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin-top: 20px;
+        }
+
+        /* BACK BUTTON */
+
+       /* BACK BUTTON */
+
+.back-button {
+  position: fixed;
+
+  bottom: 20px;
+  right: 20px;
+
+  top: auto;
+  left: auto;
+
+  z-index: 9999;
+
+  font-size: 15px;
+  padding: 10px 14px;
+}
+
+      /* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+      @media (max-width: 768px) {
+
+        body {
+          padding: 15px;
+          font-size: 18px;
+        }
+
+        .rabbit-sticky {
+          width: 55px;
+          top: 10px;
+          right: 10px;
+        }
+
+        /* HERO */
+
+        .hero-section {
+          padding: 50px 20px;
+          gap: 40px;
+          margin-top: 20px;
+        }
+
+        .hero-image-wrap {
+          left: -130px;
+          bottom: -100px;
+          width: 180px;
+        }
+
+        .hero-image-wrap img {
+          transform: scale(1.9);
+        }
+
+        .hero-text {
+          position: relative;
+          left: 90px;
+          top: -250px;
+          font-size: 2.2rem;
+          line-height: 1;
+        }
+
+        /* NAV */
+
+        .nav-bar {
+          gap: 12px;
+          margin-top: 20px;
+          margin-bottom: 45px;
+        }
+
+        .nav-button {
+          font-size: 1rem;
+          padding: 16px;
+          text-align: center;
+        }
+
+        /* SECTIONS */
+
+        section {
+          margin-bottom: 50px;
+          padding-top: 30px;
+        }
+
+        .section-header {
+          font-size: 2rem;
+          margin-bottom: 15px;
+        }
+
+        .content-box {
+          padding: 20px;
+          gap: 20px;
+        }
+
+        .content-box p {
+          font-size: 0.95rem;
+          line-height: 1.7;
+        }
+
+        .content-box img {
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        .image-row {
+          gap: 15px;
+        }
+
+        /* BACK BUTTON */
+
+        .back-button {
+          z-index: 160px;
+          bottom: 15px;
+          right: 15px;
+
+          font-size: 12px;
+          padding: 8px 12px;
+        }
       }
     </style>
   </head>
@@ -259,8 +485,8 @@
           <div>
             <p>Princess Cafe has a strong local presence and community appeal through its connection to the Princess Cinema, but its branding feels inconsistent. The dark, nearly all-black exterior and low-contrast signage make it easy to overlook, a problem echoed in its muted website with a hard-to-read logo. While the cafe offers a warm, nostalgic, and community-focused experience, its visual identity lacks clarity and energy. Improving signage, logo visibility, and the website design would better reflect its vibrant personality and help attract new visitors.</p>
             <div class="image-row">
-              <img src="rebrandimages/cafe.png" style ="width: 600px; height: 400;" alt="Cafe">
-              <img src="rebrandimages/location.png" style ="width: 400px; height: 400;" alt="Location">
+              <img src="rebrandimages/cafe.png" style="width: 600px; height: 400;" alt="Cafe">
+              <img src="rebrandimages/location.png" style="width: 400px; height: 400;" alt="Location">
             </div>
           </div>
 
@@ -270,7 +496,7 @@
       <section id="idea">
         <div class="section-header">Rebranding Concept</div>
         <div class="content-box">
-          
+
           <p>Princess Cafe should be designed to be an extension of Princess Cinema. “Twin Princesses ” creating one seamless experience. By oﬀering themed food and drinks inspired by the films currently showing, along with ticket-based deals and rotating promotions, the movie night begins before guests even take their seats. The cafe becomes the opening scene; turning a simple trip to the theater into a shared, immersive experience.
 
           </p>

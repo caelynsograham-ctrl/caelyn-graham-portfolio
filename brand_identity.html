@@ -370,64 +370,253 @@
         border-radius: 10px;
       }
 
-      /* Responsive */
-      @media (max-width: 768px) {
+      /* =========================================
+   TABLET RESPONSIVE
+========================================= */
+@media (max-width: 1024px) {
 
-        .hero {
-          padding: 120px 20px;
-        }
+  .hero {
+    padding: 160px 30px;
+  }
 
-        .hero h1 {
-          font-size: 2.5rem;
-        }
+  .hero h1 {
+    transform: scale(1.1, 2);
+    font-size: 3rem;
+    line-height: 1;
+  }
 
-        .brand-strip,
-        .specs-grid,
-        .merch-grid,
-        .packaging-inner,
-        .merch-large,
-        .tote-row,
-        .img-group {
-          display: flex;
-          flex-direction: column;
-          height: auto;
-        }
+  .brand-strip {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 
-        .specs-wrapper,
-        .packaging-box {
-          padding: 50px 0;
-        }
+  .brand-box {
+    min-height: 320px;
+    padding: 40px;
+  }
 
-        .img-group img {
-          width: 100%;
-          height: auto;
-        }
+  .specs-wrapper,
+  .packaging-box {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    padding: 70px 20px;
+  }
 
-        .merch-section h2 {
-          font-size: 2.5rem;
-        }
-      }
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .packaging-inner {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .img-group,
+  .img-group-mid {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .img-group img,
+  .img-group-mid img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+
+  .text-content {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .text-content h3 {
+    font-size: 3rem;
+  }
+
+  .text-content p {
+    font-size: 1.1rem;
+  }
+
+  .merch-section h2 {
+    transform: none;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .merch-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .merch-large {
+    position: static;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .merch-large img {
+    width: 45%;
+    height: auto;
+  }
+
+  .tote-row {
+    justify-content: center;
+  }
+
+  .tote-row img {
+    height: auto;
+  }
+
+  .merch-vertical {
+    height: auto;
+  }
+
+  .back-button {
+    top: auto;
+    left: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+
+  .page-wrapper {
+    width: 92%;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .hero {
+    padding: 100px 20px;
+  }
+
+  .hero h1 {
+    transform: none;
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .brand-box {
+    min-height: 220px;
+    padding: 25px;
+  }
+
+  .brand-box img {
+    max-width: 75%;
+  }
+
+  .spec-card h2 {
+    font-size: 2.3rem !important;
+    top: 0 !important;
+  }
+
+  .swatch-sub-row {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .swatch-stack {
+    flex-direction: row;
+  }
+
+  .font-bold,
+  .font-light {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .packaging-inner {
+    gap: 30px;
+  }
+
+  .text-content h3 {
+    font-size: 2.2rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .merch-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .merch-large {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .merch-large img {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .tote-row {
+    flex-direction: column;
+  }
+
+  .tote-row img {
+    width: 100%;
+  }
+
+  .merch-small {
+    gap: 20px;
+  }
+
+  .merch-vertical {
+    width: 100%;
+    height: auto;
+  }
+
+  .rabbit-sticky {
+    width: 55px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .back-button {
+    bottom: 15px;
+    right: 15px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
 
       .back-button {
-        position: fixed;
-        top: 870px;
-        left: 1400px;
-        z-index: 100;
+  position: fixed;
 
-        background-color: #D97388;
-        color: #2B2B2B;
+  bottom: 20px;
+  right: 20px;
 
-        font-family: 'Unbounded', sans-serif;
-        font-weight: 900;
-        font-size: 18px;
+  top: auto;
+  left: auto;
 
-        padding: 12px 18px;
-        text-decoration: none;
+  z-index: 9999;
 
-        border-radius: 6px;
+  background-color: #D97388;
+  color: #2B2B2B;
 
-        transition: transform 0.2s ease, opacity 0.2s ease;
-      }
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+
+  padding: 12px 18px;
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
 
       .back-button:hover {
         transform: scale(1.08);

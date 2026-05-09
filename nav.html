@@ -70,6 +70,78 @@
       color: #2B2B2B;
       transform: scale(1.05);
     }
+      /* =========================================
+   TABLET RESPONSIVE
+========================================= */
+@media (max-width: 1024px) {
+
+  .glass-nav {
+    padding: 40px 20px;
+  }
+
+  .nav-container {
+    gap: 40px;
+  }
+
+  .nav-logo {
+    width: 95px;
+  }
+
+  .nav-links {
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li a {
+    font-size: 2rem;
+    padding: 14px 32px;
+  }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+
+  .glass-nav {
+    padding: 25px 15px;
+  }
+
+  .nav-container {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .nav-logo {
+    width: 70px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    max-width: 320px;
+
+    font-size: 1.2rem;
+    padding: 14px 20px;
+
+    text-align: center;
+    border-radius: 6px;
+  }
+}
     </style>
 </head>
 <body>

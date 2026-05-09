@@ -177,6 +177,215 @@
         margin-left: 350px;
         letter-spacing: 0.05em;
       }
+      /* =========================================
+   TABLET RESPONSIVE
+========================================= */
+@media (max-width: 1024px) {
+
+  body {
+    padding: 30px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  /* RABBIT LOGO */
+
+  .rabbit-fixed {
+    top: -15px;
+    right: 0;
+    width: 70px;
+  }
+
+  /* HEADER */
+
+  .header-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    clip-path: none;
+
+    min-height: auto;
+    padding: 60px 30px;
+    gap: 40px;
+
+    text-align: center;
+  }
+
+  .header-section h1 {
+    font-size: 4rem;
+
+    margin: 0;
+
+    transform: scale(1.05, 1.8);
+
+    line-height: 1;
+  }
+
+  .header-section img.sticker {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+
+    transform: none;
+  }
+
+  /* MAIN CONTENT */
+
+  .main-content {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    margin-top: 40px;
+    padding-left: 0;
+  }
+
+  /* SIDEBAR IMAGE */
+
+  .sidebar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar img {
+    width: 100% !important;
+    max-width: 600px;
+    height: auto !important;
+
+    left: 0 !important;
+  }
+
+  /* BUTTONS */
+
+  .buttons {
+    margin: 0;
+
+    align-items: center;
+
+    gap: 20px;
+  }
+
+  .btn {
+    width: 260px;
+    height: 60px;
+
+    font-size: 1.6rem;
+  }
+
+  /* DETAILS */
+
+  .details {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .details h2 {
+    margin: 0 0 20px 0;
+
+    font-size: 3rem;
+  }
+
+  .details p {
+    margin: auto;
+
+    max-width: 700px;
+
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+
+  body {
+    padding: 18px;
+  }
+
+  .rabbit-fixed {
+    width: 55px;
+
+    top: -5px;
+    right: 0;
+  }
+
+  /* HEADER */
+
+  .header-section {
+    padding: 40px 20px;
+
+    border-radius: 18px;
+
+    gap: 25px;
+  }
+
+  .header-section h1 {
+    font-size: 2.3rem;
+
+    transform: none;
+
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .header-section img.sticker {
+    width: 100%;
+    max-width: 320px;
+
+    height: auto;
+  }
+
+  /* MAIN CONTENT */
+
+  .main-content {
+    gap: 30px;
+
+    margin-top: 25px;
+  }
+
+  /* SIDEBAR IMAGE */
+
+  .sidebar img {
+    width: 100% !important;
+    max-width: 100%;
+
+    height: auto !important;
+  }
+
+  /* BUTTONS */
+
+  .buttons {
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+
+    height: 56px;
+
+    font-size: 1.1rem;
+  }
+
+  /* DETAILS */
+
+  .details h2 {
+    font-size: 2rem;
+  }
+
+  .details p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    max-width: 100%;
+  }
+}
     </style>
   </head>
   <body>
