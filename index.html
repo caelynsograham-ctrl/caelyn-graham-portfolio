@@ -380,6 +380,306 @@
           width: 70px;
         }
       }
+      
+ /* =========================
+   contact
+========================= */
+
+#contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 90px; /* <-- your requested top spacing */
+}
+
+.container {
+  width: min(1200px, 95%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  top: 50px; /* moves all contact content down */
+}
+
+.container h1 {
+  color: #262626;
+  font-size: 84px;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+
+  position: relative;   /* <-- needed */
+  left: -380px;          /* <-- your 20px shift */
+}
+      .container h2 {
+  font-size: 23px;
+         position: relative;
+  left: -50px; 
+        bottom: -40px;
+  }
+.form-card {
+  background-color: #262626;
+  padding: 60px;
+  display: flex;
+  gap: 40px;
+  color: white;
+
+  width: 100%;
+  justify-content: center;
+}
+
+        .input-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field label {
+            font-size: 28px;
+            margin-bottom: 5px;
+            transition: opacity 0.2s ease;
+        }
+
+        .field input {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid white;
+            color: white;
+            font-size: 18px;
+            padding: 5px 0;
+            outline: none;
+        }
+
+        .actions {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .send-btn {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 30px;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 24px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .send-btn.sent {
+            background-color: #D97388;
+            color: white;
+        }
+
+        .social-circles {
+            display: flex;
+            gap: 15px;
+        }
+
+        .circle {
+            width: 45px;
+            height: 45px;
+            background-color: #cccccc;
+            border-radius: 50%;
+        }
+
+        .message-group {
+            flex: 1;
+            background-color: #F4EEE9;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message-group label {
+            color: #262626;
+            font-size: 32px;
+            margin-bottom: 10px;
+            transition: opacity 0.2s ease;
+        }
+
+        .message-group textarea {
+            flex-grow: 1;
+            background: transparent;
+            border: none;
+            resize: none;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .hidden {
+            opacity: 0;
+            height: 0;
+            margin: 0;
+            pointer-events: none;
+        } 
+      /* =========================
+   CONTACT RESPONSIVE
+========================= */
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+  #contact-section {
+    padding-top: 40px;
+    min-height: auto;
+  }
+
+  .container {
+    top: 0;
+    width: 100%;
+  }
+
+  .container h1 {
+
+    font-size: clamp(3rem, 8vw, 5rem);
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: left;
+
+    margin-bottom: 30px;
+  }
+
+  .form-card {
+
+    flex-direction: column;
+
+    padding: 40px;
+
+    gap: 30px;
+  }
+
+  .field label {
+    font-size: 22px;
+  }
+
+  .message-group label {
+    font-size: 26px;
+  }
+
+  .message-group {
+    min-height: 260px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  #contact-section {
+
+    padding-top: 20px;
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .container {
+
+    top: 0;
+
+    width: 100%;
+  }
+
+  .container h1 {
+
+    font-size: clamp(2.5rem, 14vw, 4rem);
+
+    left: 0;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+  }
+   
+
+  .form-card {
+
+    flex-direction: column;
+
+    padding: 24px;
+
+    gap: 24px;
+
+    border-radius: 18px;
+  }
+
+  .input-group {
+    gap: 18px;
+  }
+
+  .field label {
+    font-size: 18px;
+  }
+
+  .field input {
+
+    font-size: 16px;
+
+    padding: 8px 0;
+  }
+
+  .message-group {
+
+    min-height: 220px;
+
+    padding: 16px;
+  }
+
+  .message-group label {
+    font-size: 22px;
+  }
+
+  .message-group textarea {
+    font-size: 16px;
+  }
+
+  .actions {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .send-btn {
+
+    width: 100%;
+
+    font-size: 20px;
+
+    padding: 14px 20px;
+  }
+
+  .social-circles {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .circle {
+
+    width: 38px;
+    height: 38px;
+  }
+}
+      
+      
+      
+      
     </style>
   </head>
 
@@ -467,8 +767,55 @@
       </div>
 
     </section>
+    
+    <!-- contact-->
+   <section id="contact-section">
+  <div class="container">
+    <h1>Contact</h1>
+
+    <form class="form-card" id="contactForm">
+
+        <div class="input-group">
+
+            <div class="field">
+                <label for="name">Name</label>
+                <input id="name" type="text">
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email">
+            </div>
+
+            <div class="field">
+                <label for="subject">Subject</label>
+                <input id="subject" type="text">
+            </div>
+
+            <div class="actions">
+                <button class="send-btn" id="sendBtn" type="submit">SEND</button>
+
+                <div class="social-circles">
+                    <div class="circle">  <img src="call.png" alt="call link"></div>
+                    <div class="circle"><img src="insta.png" alt="instagram link"></div>
+                    <div class="circle"><img src="linkedIn.png" alt="linkedin link"></div>
+                </div>
+            </div>
+          <h2>caelynsograham@gmail.com</h2>
+
+        </div>
+
+        <div class="message-group">
+            <label for="message">Message</label>
+            <textarea id="message"></textarea>
+        </div>
+
+    </form>
+ </div>
+</section>
 
     <script>
+      
       /* =========================
    RABBIT ANIMATION
 ========================= */
@@ -568,7 +915,99 @@
       window.addEventListener('resize', updateRabbit);
 
       window.addEventListener('load', updateRabbit);
+      
+      
+   /* =========================
+   CONTACT CENTER ANIMATION
+========================= */
 
+const contactSection = document.getElementById('contact-section');
+
+function animateRabbitToCenter() {
+
+  const rect = contactSection.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
+
+  /* START animation when contact section enters screen */
+
+  const triggerPoint = windowHeight * 0.8;
+
+  let progress =
+    (triggerPoint - rect.top) / (windowHeight * 0.8);
+
+  progress = Math.max(0, Math.min(progress, 1));
+
+  /* CURRENT rabbit size */
+
+  const rabbitWidth = rabbit.offsetWidth;
+
+  /* TARGET CENTER POSITION */
+
+  const centerLeft =
+    (windowWidth - rabbitWidth) / 2;
+
+  let topOffset;
+
+if (windowWidth <= 600) {
+
+  topOffset = -80;
+
+} else if (windowWidth <= 1024) {
+
+  topOffset = -140;
+
+} else {
+
+  topOffset = -260;
+}
+
+const centerTop =
+  (windowHeight - rabbitWidth) / 2 + topOffset;
+
+  /* GET CURRENT POSITION */
+
+  const currentLeft =
+    rabbit.getBoundingClientRect().left;
+
+  const currentTop =
+    rabbit.getBoundingClientRect().top;
+
+  /* SMOOTH INTERPOLATION */
+
+  const moveLeft =
+    currentLeft +
+    ((centerLeft - currentLeft) * progress);
+
+  const moveTop =
+    currentTop +
+    ((centerTop - currentTop) * progress);
+
+  /* APPLY POSITION */
+
+  rabbit.style.left = moveLeft + "px";
+  rabbit.style.top = moveTop + "px";
+
+  rabbit.style.right = "";
+
+  /* SCALE UP TO 5% LARGER */
+
+  const scale =
+    1 + (0.5 * progress);
+
+  rabbit.style.transform =
+    `scale(${scale})`;
+
+  rabbit.style.transformOrigin =
+    "center center";
+}
+
+/* RUN AFTER EXISTING ANIMATION */
+
+window.addEventListener('scroll', animateRabbitToCenter);
+window.addEventListener('resize', animateRabbitToCenter);
+window.addEventListener('load', animateRabbitToCenter);
+      
       /* =========================
          CAROUSEL
       ========================= */
@@ -636,6 +1075,63 @@
 
         }, 50);
       }
+      
+      
+      
+      ///// contact section////
+        // Label hide/show on typing
+    function setupField(inputId) {
+        const input = document.getElementById(inputId);
+        const label = document.querySelector(`label[for="${inputId}"]`);
+
+        input.addEventListener("input", () => {
+            if (input.value.trim() !== "") {
+                label.classList.add("hidden");
+            } else {
+                label.classList.remove("hidden");
+            }
+        });
+    }
+
+    setupField("name");
+    setupField("email");
+    setupField("subject");
+    setupField("message");
+
+    // Send button behavior
+    const form = document.getElementById("contactForm");
+const btn = document.getElementById("sendBtn");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  const mailtoLink =
+    `mailto:caelynsograham@gmail.com` +
+    `?subject=${encodeURIComponent(subject)}` +
+    `&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`;
+
+  // animation
+  btn.classList.add("sent");
+  btn.textContent = "SENT";
+
+  // open email client
+  window.location.href = mailtoLink;
+
+  // reset UI after animation
+  setTimeout(() => {
+    btn.classList.remove("sent");
+    btn.textContent = "SEND";
+    form.reset();
+  }, 3000);
+});
+      
     </script>
 
   </body>
