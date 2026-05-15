@@ -1,1 +1,375 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
+    <title>APP DESIGN</title>
+
+    <style>
+      :root {
+        --bg-color: #f2ede9;
+        --pink-accent: #d2798d;
+        --gray-widget: #d9d9d9;
+        --black: #232323;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 60px;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* MUCH WIDER CONTAINER */
+      .container {
+        width: 92vw;
+        max-width: 1400px;
+        position: relative;
+      }
+
+      /* Rabbit Logo (Top Right) */
+      .rabbit-fixed {
+        position: absolute;
+        top: -40px;
+        right: -20px;
+        width: 90px;
+        z-index: 10;
+        transition: transform 0.3s ease;
+      }
+
+      .rabbit-fixed:hover {
+        transform: scale(1.1);
+      }
+
+      /* The Pink Header Section */
+      /* We use a flex container and a specific background trick to get that L-shape */
+      .header-section {
+        background-color: var(--pink-accent);
+        padding: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-radius: 25px;
+        /* This creates the "cutout" look on the bottom left */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 40% 65%, 0 65%);
+        min-height: 400px;
+      }
+
+      .header-section h1 {
+        font-size: 110px;
+        margin-left: 40px;
+        font-family: 'Unbounded', sans-serif;
+        color: white;
+        transform: scale(1.18, 3) translateY(-.01vw);
+
+        letter-spacing: -2px;
+        font-weight: 500;
+        line-height: 0.9;
+        z-index: 20;
+      }
+
+      .header-section img {
+        width: 750px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 5px;
+        transform: translateX(-250px);
+        margin-top: 20px;
+        z-index: 12;
+        flex-shrink: 0;
+      }
+
+      /* Content Grid */
+      .main-content {
+        display: grid;
+        grid-template-columns: 280px 150px 1fr;
+        gap: 30px;
+        margin-top: -120px;
+        /* Pulls the bottom content up into the cutout */
+        padding-left: 20px;
+        margin-top: -120px;
+
+      }
+
+      /* Left Gray Box */
+      .sidebar img {
+        background-color: var(--gray-widget);
+        padding: 60px 30px;
+        height: 270px;
+        width: 450px;
+        display: flex;
+        align-items: flex-end;
+        font-size: 65px;
+        line-height: 0.9;
+        font-weight: 400;
+        color: var(--black);
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        justify-content: flex-start;
+        /* 👈 move to top */
+        margin-top: 200px;
+        /* or adjust as needed */
+        margin-left: 250px;
+        z-index: 5;
+      }
+
+      .btn {
+
+
+        display: flex;
+        align-items: center;
+        /* vertical centering */
+        justify-content: center;
+        /* horizontal centering */
+
+        background-color: #2B2B2B;
+        color: #FFFFFF;
+
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 900;
+        font-size: 2rem;
+        text-transform: uppercase;
+
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        /* removes underline */
+        transition: all 0.2s ease;
+
+        width: 250px;
+        height: 60px;
+      }
+
+      /* Hover effect (same as your example) */
+      .btn:hover {
+        background-color: #D97388;
+        /* pink accent */
+        color: #2B2B2B;
+        transform: scale(1.05);
+      }
+
+      /* Description Text */
+      .details {
+        padding-top: 140px;
+        /* Space it below the pink header line */
+      }
+
+      .details h2 {
+        margin-left: 350px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 62px;
+        font-weight: 500;
+        font-family: 'Unbounded', sans-serif;
+      }
+
+      .details p {
+        line-height: 1.2;
+        font-size: 18px;
+        color: #1a1a1a;
+        max-width: 500px;
+        margin-left: 350px;
+        letter-spacing: 0.05em;
+      }
+      /* =========================================
+   TABLET RESPONSIVE
+========================================= */
+@media (max-width: 1024px) {
+
+  body {
+    padding: 30px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .rabbit-fixed {
+    top: -20px;
+    right: 0;
+    width: 70px;
+  }
+
+  .header-section {
+    flex-direction: column;
+    align-items: center;
+    clip-path: none;
+    min-height: auto;
+    padding: 50px 30px;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .header-section h1 {
+    font-size: 4rem;
+    transform: scale(1.05, 1.8);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .header-section img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    transform: none;
+    margin-top: 0;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    margin-top: 40px;
+    padding-left: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar iframe {
+    width: 100% !important;
+    max-width: 700px;
+    height: 500px;
+  }
+
+  .buttons {
+    margin: 0;
+    align-items: center;
+  }
+
+  .btn {
+    width: 260px;
+    font-size: 1.7rem;
+  }
+
+  .details {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .details h2 {
+    margin: 0 0 20px 0;
+    font-size: 3rem;
+  }
+
+  .details p {
+    margin: auto;
+    max-width: 700px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+  }
+
+  .rabbit-fixed {
+    width: 55px;
+    top: -10px;
+    right: 0;
+  }
+
+  .header-section {
+    padding: 40px 20px;
+    border-radius: 18px;
+    gap: 25px;
+  }
+
+  .header-section h1 {
+    font-size: 2.2rem;
+    transform: none;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .header-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .main-content {
+    gap: 30px;
+    margin-top: 25px;
+  }
+
+  .sidebar iframe {
+    width: 100% !important;
+    height: 320px;
+  }
+
+  .buttons {
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+    height: 56px;
+    font-size: 1.2rem;
+  }
+
+  .details h2 {
+    font-size: 2rem;
+  }
+
+  .details p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+}
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="rabbit-fixed">
+        <a href="nav.html">
+          <img src="Graham_logo.png" alt="Logo" style="width:100%">
+        </a>
+      </div>
+      <header class="header-section">
+        <h1>APP DESIGN</h1>
+        <img src="magimages/elisa.png" style="object-position: 40% 40%; alt=" Magazine Content">
+      </header>
+
+      <div class="main-content">
+        <div class="sidebar">
+          <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="500px" height="400" src="https://embed.figma.com/design/Bkwf2HGDfaqg9uEH4XR2o7/Paper-Magazine--Mockup-with-Page-Animation--Community-?node-id=10002-10&embed-host=share" allowfullscreen></iframe>
+        </div>
+
+        <div class="buttons">
+
+          <a href="mprocess.html" class="btn">PROCESS</a>
+          <a href="mphotos.html" class="btn">Final</a>
+        </div>
+
+        <div class="details">
+          <h2>Description</h2>
+          <p>
+            This project involved creating a magazine that incorporates collage-style typography using letters found in everyday life. We were given full creative freedom in concept and design, we had to carefully consider typography, photography, and hierarchy to ensure the layouts remained clear and visually organized
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
