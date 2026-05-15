@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
 
     <title>I'm Hungry - Magazine Project</title>
+
     <style>
-      /* General Styles */
       html {
         scroll-behavior: smooth;
-        /* This makes the jumping look like scrolling */
       }
 
       body {
         background-color: #f2ede9;
-        /* Light beige background from image */
         font-family: 'Inter', sans-serif;
         margin: 0;
         padding: 0;
@@ -26,35 +25,48 @@
         align-items: center;
       }
 
-      /* Sticky Rabbit Button */
+      /* ===================== */
+      /* Sticky Logo */
+      /* ===================== */
       .rabbit-sticky {
         position: fixed;
         top: 20px;
         right: 20px;
         width: 90px;
         z-index: 100;
-        transition: transform 0.3s ease;
       }
 
       .rabbit-sticky:hover {
         transform: scale(1.1);
       }
 
-      /* Main Container */
+      /* ===================== */
+      /* Layout Container */
+      /* ===================== */
       .container {
-        max-width: 1200px;
+        max-width: 1300px;
         width: 95%;
       }
 
-      /* Hero / Widget Area */
+      /* ===================== */
+      /* HERO IMAGE FIX */
+      /* ===================== */
       .hero-section {
         margin-top: 40px;
-        margin-left: -50px;
-        margin-bottom: 10px;
-        padding: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
       }
 
-      /* Navigation Buttons */
+      .hero-section img {
+        width: 1300px;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* ===================== */
+      /* NAV BAR */
+      /* ===================== */
       .nav-bar {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -67,19 +79,13 @@
         font-family: 'Unbounded', sans-serif;
         color: white;
         text-decoration: none;
-
         font-size: 1.4rem;
         padding: 22px 18px;
-
         display: flex;
-        /* 👈 key fix */
         justify-content: center;
-        /* horizontal center */
         align-items: center;
-        /* vertical center */
-
-        cursor: pointer;
-        transition: all 0.2s ease;
+        transition: 0.2s ease;
+        text-align: center;
       }
 
       .nav-button:hover {
@@ -88,47 +94,92 @@
         transform: scale(1.05);
       }
 
-
-      /* Content Sections */
+      /* ===================== */
+      /* SECTIONS */
+      /* ===================== */
       section {
         padding-top: 67px;
-        /* Offset for scrolling */
         margin-bottom: 100px;
-        position: relative;
       }
 
       .section-header {
         color: #D97388;
-        display: inline-block;
-        padding: 10px 40px;
-        margin-bottom: 20px;
-        margin-left: -45px;
         font-size: 52px;
-        font-weight: 500;
         font-family: 'Unbounded', sans-serif;
-
+        margin-bottom: 20px;
       }
 
+      /* ===================== */
+      /* CONTENT BOX FIX */
+      /* ===================== */
       .content-box {
         background-color: #2e2e2e;
         color: white;
         padding: 30px;
         display: flex;
-        gap: 20px;
-        line-height: 1.6;
-
+        gap: 30px;
         align-items: center;
-        /* 👈 THIS centers image vertically */
       }
 
+      /* text block grows */
+      .content-box p {
+        flex: 1;
+        line-height: 1.6;
+      }
+
+      /* images inside content */
       .content-box img {
-        max-width: 300px;
-        max-height: 500px;
-        height: fixed;
+        width: 400px;
+        max-width: 100%;
+        height: auto;
         border: 1px solid #555;
+        object-fit: contain;
       }
 
-       .back-button {
+      /* iframe styling */
+      .content-box iframe {
+        width: 600px;
+        max-width: 100%;
+        height: 450px;
+        border: none;
+      }
+
+      .figma-phone {
+        width: 320px;
+        /* phone width */
+        aspect-ratio: 9 / 19.5;
+        /* modern phone ratio */
+        max-width: 100%;
+        border-radius: 30px;
+        overflow: hidden;
+        border: 2px solid #555;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        flex-shrink: 0;
+      }
+
+      /* iframe fills the phone perfectly */
+      .figma-phone iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* make it behave nicely inside your flex box */
+      .content-box {
+        align-items: center;
+      }
+
+      /* ===================== */
+      /* FINAL SECTION IMAGES BIGGER */
+      /* ===================== */
+      #outcome .content-box img {
+        width: 500px;
+      }
+
+      /* ===================== */
+      /* BACK BUTTON */
+      /* ===================== */
+      .back-button {
         position: fixed;
         top: 870px;
         left: 1400px;
@@ -154,214 +205,148 @@
         background-color: white;
           
       }
-      /* =========================================
-   TABLET RESPONSIVE
-========================================= */
+      /* ===================== */
+/* TABLET */
+/* ===================== */
 @media (max-width: 1024px) {
 
-  body {
-    padding: 20px;
-    font-size: 22px;
-  }
-
-  .rabbit-sticky {
-    width: 70px;
-    top: 15px;
-    right: 15px;
-  }
-
-  .container {
-    width: 100%;
-  }
-
-  .hero-section {
-    margin: 30px 0 20px 0;
-    padding: 0;
-  }
-
-  .hero-section iframe {
-    width: 100% !important;
-    height: 600px;
-  }
-
-  .nav-bar {
-    grid-template-columns: 1fr;
-    margin-bottom: 60px;
-  }
-
-  .nav-button {
-    font-size: 1.2rem;
-    padding: 18px;
-  }
-
-  section {
-    margin-bottom: 70px;
-    padding-top: 40px;
-  }
-
-  .section-header {
-    margin-left: 0;
-    font-size: 3rem;
-    padding: 10px 0;
-    display: block;
-    text-align: center;
-  }
-
-  .content-box {
-    flex-direction: column;
-    text-align: left;
-    padding: 25px;
-    gap: 25px;
-  }
-
-  .content-box img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: auto;
-  }
-
-  .content-box p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-
-  .back-button {
-    top: auto;
-    left: auto;
-    bottom: 20px;
-    right: 20px;
-
-    font-size: 15px;
-    padding: 10px 14px;
-  }
+body {
+  font-size: 22px;
 }
 
+/* stack everything */
+.content-box {
+  flex-direction: column;
+  text-align: left;
+}
 
-/* =========================================
-   MOBILE RESPONSIVE
-========================================= */
+/* full width media */
+.content-box img,
+.figma-phone {
+  width: 100%;
+}
+
+/* nav becomes single column */
+.nav-bar {
+  grid-template-columns: 1fr;
+}
+
+/* reduce spacing */
+section {
+  margin-bottom: 70px;
+}
+
+.section-header {
+  font-size: 38px;
+  text-align: center;
+}
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
 @media (max-width: 768px) {
 
-  body {
-    font-size: 18px;
-    padding: 15px;
-  }
-
-  .rabbit-sticky {
-    width: 55px;
-    top: 10px;
-    right: 10px;
-  }
-
-  .hero-section {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .hero-section iframe {
-    width: 100% !important;
-    height: 320px;
-  }
-
-  .nav-bar {
-    gap: 12px;
-    margin-bottom: 45px;
-  }
-
-  .nav-button {
-    font-size: 1rem;
-    padding: 16px;
-    text-align: center;
-  }
-
-  section {
-    margin-bottom: 50px;
-    padding-top: 30px;
-  }
-
-  .section-header {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-
-  .content-box {
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .content-box p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .content-box img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .back-button {
-    bottom: 15px;
-    right: 15px;
-
-    font-size: 12px;
-    padding: 8px 12px;
-  }
+body {
+  font-size: 18px;
+  padding: 10px;
 }
+
+.section-header {
+  font-size: 28px;
+}
+
+.nav-button {
+  font-size: 1rem;
+  padding: 16px;
+}
+
+/* tighter spacing */
+.content-box {
+  padding: 18px;
+  gap: 18px;
+}
+
+/* images fully responsive */
+.content-box img {
+  width: 100%;
+}
+
+/* Figma centered */
+.figma-phone {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+      }
     </style>
   </head>
+
   <body>
 
     <div class="rabbit-sticky">
       <a href="nav.html">
-        <img src="Graham_logo.png" alt="Logo" style="width:100%">
+        <img src="Graham_logo.png" style="width:100%">
       </a>
     </div>
 
-    <a href="magazine.html" class="back-button">BACK</a>
+    <a href="app.html" class="back-button">BACK</a>
 
     <div class="container">
+
+      <!-- HERO -->
       <div class="hero-section">
-        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1300px" height="750" src="https://embed.figma.com/proto/Bkwf2HGDfaqg9uEH4XR2o7/Paper-Magazine--Mockup-with-Page-Animation--Community-?node-id=8001-777&p=f&scaling=min-zoom&content-scaling=fixed&page-id=6110%3A1899&starting-point-node-id=8001%3A777&embed-host=share" allowfullscreen></iframe>
-
-
+        <img src="app/safety.png" alt="Hero Image">
       </div>
 
+      <!-- NAV -->
       <nav class="nav-bar">
-        <a href="#concept" class="nav-button">Concept</a>
-        <a href="#challenges" class="nav-button">Challenges</a>
-        <a href="#outcome" class="nav-button">Final Outcome</a>
+        <a href="#First Iteration" class="nav-button">First Iteration</a>
+        <a href="#Research & Usability" class="nav-button">Research & Usability</a>
+        <a href="#Design System & Concept Sketch" class="nav-button">Design System & Concept Sketch</a>
       </nav>
 
-      <section id="concept">
-        <div class="section-header">Concept / theme</div>
+      <!-- SECTION 1 -->
+      <section id="First Iteration">
+        <div class="section-header">First Iteration</div>
+
         <div class="content-box">
-          <div>
-            <p>In my magazine I’m Hungry, the central idea is that food is comfort. Inspired by Teen Magazine and Popeye Magazine, it explores a dichotomy between being surrounded by bright and eye-catching food with cultural ties but still feeling disconnected. I hoped to capture a longing for comfort. To engage a young adult audience, I used a bright, energetic color palette and an image-heavy layout that emphasizes visual storytelling. I paired collage-style typography on the cover with a clean sans-serif font for the rest, keeping the design dynamic while maintaining clarity.</p>
+          <p>
+            Our goal was to design a nightlife app tailored specifically to the Waterloo region. We recognized a lack of accessible and centralized information surrounding local clubs and nightlife, particularly for students who may be new to the social scene. With this in mind, we aimed to create a safe and reliable platform that users could turn to for guidance, planning, and connection, which led to the first iteration of our app, Night Life.
+
+            During the design process, I was responsible for developing the app’s safety features. My focus was on creating tools that helped users stay connected while out at venues, encouraging groups to remain together and improving overall safety and communication throughout the nightlife experience.
+          </p>
+
+          <div class="figma-phone">
+            <iframe src="https://embed.figma.com/proto/N4tzOidunAPgE2GHljNYxb/Night-life-App_210?node-id=24-4&p=f&scaling=scale-down&content-scaling=fixed&page-id=21%3A3&starting-point-node-id=24%3A4&embed-host=share" allowfullscreen>
+            </iframe>
           </div>
-          <img src="magimages/sketch.png" alt="Sketches of magazine layout">
         </div>
       </section>
 
-      <section id="challenges">
-        <div class="section-header">Challenges & Problem-Solving</div>
+      <!-- SECTION 2 -->
+      <section id="Research & Usability">
+        <div class="section-header">Research & Usability Insights</div>
+
         <div class="content-box">
-          <p>One of the more challenging aspects of my magazine was developing a cohesive visual story across all of my images. Initially, I struggled to present the photos in a way that felt both unified and engaging while still maintaining a dynamic and visually interesting layout. Finding the right balance between spacing, composition, and visual flow took multiple iterations and experimentation. I had to continuously adjust how the images interacted with one another so the pages felt connected rather than disconnected. This process pushed me to think more critically about visual storytelling and hierarchy, ultimately helping me create a more intentional and cohesive final design. It also helped me better understand how small layout decisions can significantly impact the overall mood and readability of a page.
-
+          <p>
+            Our main priority was fixing the parts of the app that disrupted the user experience and prevented smooth use of the nightlife app. While we had many additional ideas for improvements and clarification, time and feasibility limited what we could implement. Brainstorming solutions was easy, but actually designing even small fixes in Figma—like adding a cancel option for an accidentally selected venue—would add to the final result.
           </p>
+
+          <img src="app/usability.png" style="width: 700px;" alt="Usability Image">
         </div>
       </section>
 
-      <section id="outcome">
-        <div class="section-header">Final Outcome / Impact</div>
+      <!-- SECTION 3 -->
+      <section id="Design System & Concept Sketch">
+        <div class="section-header">Design System & Concept Sketch</div>
+
         <div class="content-box">
-          <p>I’m most proud of the full-spread page, as it gave me the opportunity to experiment with composition in a way that felt new and engaging while fully embracing the magazine’s image-heavy, immersive style. It allowed me to push the layout further and think more intentionally about how images can guide the viewer’s eye across a spread. I’m also really happy with the soda wall page, which stands out against the more minimal layouts used throughout the rest of the magazine. Because much of the design relies on white space, this page creates a strong contrast and brings a pop of energy. Overall, these pages helped define the visual identity of the magazine and made the final outcome feel more complete and dynamic. They also strengthened the rhythm of the magazine by balancing quieter sections with more visually intense moments.
-
-          </p>
+          <img src="app/designSyst.png" style="width: 800px;">
+          <img src="app/conceptSket.png">
         </div>
       </section>
+
     </div>
 
   </body>

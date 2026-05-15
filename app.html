@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
-    <title>APP DESIGN</title>
+    <title>Magazine Project</title>
 
     <style>
       :root {
@@ -59,20 +59,23 @@
       }
 
       .header-section h1 {
-        font-size: 110px;
-        margin-left: 40px;
-        font-family: 'Unbounded', sans-serif;
-        color: white;
-        transform: scale(1.18, 3) translateY(-.01vw);
+         font-size: 110px;
+  margin-left: 20px;
+  font-family: 'Unbounded', sans-serif;
+  color: white;
 
-        letter-spacing: -2px;
-        font-weight: 500;
-        line-height: 0.9;
-        z-index: 20;
+  transform: scale(1.1, 3) translateY(-.01vw);
+
+  letter-spacing: -2.2px;
+  font-weight: 500;
+  line-height: 0.9;
+  z-index: 20;
+
+  white-space: nowrap;   /* 👈 prevents line break */
       }
 
       .header-section img {
-        width: 750px;
+        width: 650px;
         height: 400px;
         object-fit: cover;
         border-radius: 5px;
@@ -179,6 +182,14 @@
         margin-left: 350px;
         letter-spacing: 0.05em;
       }
+      
+      .my-video {
+        margin-left: 100px;
+  width: 100%;
+  max-width: 1500px;
+  height: auto;
+  display: block;
+}
       /* =========================================
    TABLET RESPONSIVE
 ========================================= */
@@ -217,10 +228,11 @@
 
   .header-section img {
     width: 100%;
-    max-width: 700px;
-    height: auto;
-    transform: none;
-    margin-top: 0;
+  max-width: 600px;
+  height: auto;
+  transform: none;
+  margin-top: 0;
+  margin-left: -300px; /* 👈 moves image 20px left */
   }
 
   .main-content {
@@ -348,25 +360,26 @@
       </div>
       <header class="header-section">
         <h1>APP DESIGN</h1>
-        <img src="magimages/elisa.png" style="object-position: 40% 40%; alt=" Magazine Content">
+        <img src="app/cluib.png"  alt=" Club sceen">
       </header>
 
       <div class="main-content">
         <div class="sidebar">
-          <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="500px" height="400" src="https://embed.figma.com/design/Bkwf2HGDfaqg9uEH4XR2o7/Paper-Magazine--Mockup-with-Page-Animation--Community-?node-id=10002-10&embed-host=share" allowfullscreen></iframe>
+         <video class="my-video" autoplay muted loop>
+  <source src="app/Night.mp4" type="video/mp4">
+</video>
         </div>
 
         <div class="buttons">
 
-          <a href="mprocess.html" class="btn">PROCESS</a>
-          <a href="mphotos.html" class="btn">Final</a>
+          <a href="aprocess.html" class="btn">PROCESS</a>
+          <a href="final.html" class="btn">FINAL</a>
         </div>
 
         <div class="details">
           <h2>Description</h2>
           <p>
-            This project involved creating a magazine that incorporates collage-style typography using letters found in everyday life. We were given full creative freedom in concept and design, we had to carefully consider typography, photography, and hierarchy to ensure the layouts remained clear and visually organized
-          </p>
+Nightlife is a high-fidelity concept mobile app designed to help people safely navigate the Waterloo nightlife scene through club and venue recommendations combined with safety-focused features. As the Safety Features Developer, my role was to design the app’s safety tools, including alerts and information systems. The project addresses the problem of scattered, non-safety-focused nightlife information, especially for students and newcomers trying to make informed decisions about where to go and how to stay safe at night.          </p>
         </div>
       </div>
     </div>

@@ -1,115 +1,268 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Solution & Reflection</title>
-    <style>
-        /* Base Page Setup */
-        body {
-            background-color: #f2ede4; /* Off-white/beige background */
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .slide-container {
-            width: 90%;
-            max-width: 1100px;
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-            position: relative;
-        }
+<title>Final Solution & Reflection</title>
 
-        /* Top Right Icon Placeholder */
-        .icon-top-right {
-            position: absolute;
-            top: -60px;
-            right: 0;
-            width: 80px;
-            opacity: 0.6;
-        }
+<!-- ✅ Added font to match second code -->
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" rel="stylesheet">
 
-        /* Left Column: The Figma Embed Container */
-        .left-col {
-            flex: 1;
-            background-color: #d9d9d9; /* Grey placeholder color */
-            min-height: 550px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+<style>
 
-        /* Right Column: Text Content */
-        .right-col {
-            flex: 1.2;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+/* ===================== */
+/* BASE */
+/* ===================== */
+body {
+  background-color: #f2ede4;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+ /* ===================== */
+      /* Sticky Logo */
+      /* ===================== */
+      .rabbit-sticky {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 90px;
+        z-index: 100;
+      }
 
-        .header-box {
-            background-color: #333333;
-            color: white;
-            padding: 20px 30px;
-            font-size: 32px;
-            font-weight: 400;
-        }
+      .rabbit-sticky:hover {
+        transform: scale(1.1);
+      }
 
-        .content-box {
-            background-color: #333333;
-            color: white;
-            padding: 40px;
-            line-height: 1.5;
-            font-size: 20px;
-            text-align: left;
-        }
+/* ===================== */
+/* MAIN LAYOUT */
+/* ===================== */
+.slide-container {
+  width: 1300px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .slide-container {
-                flex-direction: column;
-            }
-            .left-col {
-                width: 100%;
-                min-height: 300px;
-            }
-        }
-    </style>
+/* ===================== */
+/* LEFT COLUMN */
+/* ===================== */
+.left-col {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.figma-phone {
+  width: 320px;
+  aspect-ratio: 9 / 19.5;
+  max-width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid #555;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.figma-phone iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===================== */
+/* RIGHT COLUMN */
+/* ===================== */
+.right-col {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.header-box {
+  background-color: #333333;
+  color: white;
+  padding: 20px 30px;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.content-box {
+  background-color: #333333;
+  color: white;
+  padding: 40px;
+  line-height: 1.5;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ===================== */
+/* NAV BUTTON (unchanged) */
+/* ===================== */
+.nav-button {
+  background-color: #2e2e2e;
+  font-family: 'Unbounded', sans-serif;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 22px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #D97388;
+  color: #2B2B2B;
+  transform: scale(1.05);
+}
+
+/* ===================== */
+/* ✅ BACK BUTTON (MATCHED TO SECOND CODE) */
+/* ===================== */
+.back-button {
+  position: fixed;
+  top: 870px;
+  left: 1400px;
+  z-index: 100;
+
+  background-color: #D97388;
+  color: #2B2B2B;
+
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+
+  padding: 12px 18px;
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.back-button:hover {
+  transform: scale(1.08);
+  background-color: white;
+}
+
+/* ===================== */
+/* TABLET */
+/* ===================== */
+@media (max-width: 1024px) {
+
+  .slide-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .content-box {
+    font-size: 18px;
+    padding: 30px;
+  }
+
+  .header-box {
+    font-size: 26px;
+  }
+
+  .back-button {
+    top: auto;
+    left: auto;
+    bottom: 20px;
+    right: 20px;
+
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+
+  body {
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+
+  .slide-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .figma-phone {
+    width: 260px;
+  }
+
+  .header-box {
+    font-size: 22px;
+    padding: 15px;
+  }
+
+  .content-box {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .back-button {
+    bottom: 15px;
+    right: 15px;
+
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+</style>
 </head>
+
 <body>
-
-    <div class="slide-container">
-        
-        <div class="left-col">
-            <iframe 
-                style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 450px;" 
-                src="https://embed.figma.com/design/N4tzOidunAPgE2GHljNYxb/Night-life-App_210?node-id=695-132&embed-host=share" 
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <div class="right-col">
-            <div class="header-box">
-                Final Solution & Reflection
-            </div>
-            
-            <div class="content-box">
-                We implemented several features to improve both usability and safety within the app, 
-                including friends lists, proximity maps, and friend notifications to help users stay 
-                connected throughout the night. To reduce UI confusion, we replaced swipe interactions 
-                with a more intuitive button-based layout and refined smaller interface elements, 
-                such as creating consistent button designs across the app. We also incorporated 
-                clear and organized text to better communicate important safety information to users.
-            </div>
-        </div>
+<div class="rabbit-sticky">
+      <a href="nav.html">
+        <img src="Graham_logo.png" style="width:100%">
+      </a>
     </div>
+  
+<a href="app.html" class="back-button">BACK</a>
+
+<div class="slide-container">
+
+  <div class="left-col">
+    <div class="figma-phone">
+      <iframe src="https://embed.figma.com/proto/N4tzOidunAPgE2GHljNYxb/Night-life-App_210?node-id=695-135&p=f&scaling=scale-down&content-scaling=fixed&page-id=695%3A132&starting-point-node-id=695%3A133&embed-host=share"></iframe>
+    </div>
+  </div>
+
+  <div class="right-col">
+
+    <div class="header-box">
+      Final Solution & Reflection
+    </div>
+
+    <div class="content-box">
+      We implemented several features to improve both usability and safety within the app, 
+      including friends lists, proximity maps, and friend notifications to help users stay 
+      connected throughout the night. To reduce UI confusion, we replaced swipe interactions 
+      with a more intuitive button-based layout and refined smaller interface elements, 
+      such as creating consistent button designs across the app. We also incorporated 
+      clear and organized text to better communicate important safety information to users.
+    </div>
+
+  </div>
+
+</div>
 
 </body>
 </html>
