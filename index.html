@@ -136,20 +136,22 @@
 
         .caelyn-name,
         .graham-name {
+          letter-spacing: -0.05em;
+
           font-size: clamp(4rem, 14vw, 120px);
         }
 
         .caelyn-name {
           transform: scaleY(2);
-                     margin-top: 30vh;
+          margin-top: 30vh;
           margin-left: -350px;
-                  z-index: 120;
+          z-index: 120;
 
         }
 
         .graham-name {
           transform: scaleY(2.1);
-           margin-top: 70vh;
+          margin-top: 70vh;
           margin-left: 10px;
         }
       }
@@ -169,19 +171,21 @@
 
         .caelyn-name,
         .graham-name {
+          letter-spacing: -0.05em;
+
           font-size: clamp(3rem, 16vw, 5rem);
         }
 
         .caelyn-name {
           transform: scaleY(1.8);
-          margin-left: -20px;
-margin-top: -10vh;
+          margin-left: -15px;
+          margin-top: -10vh;
         }
 
         .graham-name {
           transform: scaleY(2);
           margin-top: 30vh;
-          margin-left: 40px;
+          margin-left: 5px;
         }
       }
 
@@ -215,12 +219,15 @@ margin-top: -10vh;
       }
 
       .about-content h2 {
-                color: #2B2B2B;
-        font-size: clamp(2.5rem, 6vw, 6rem);
+        color: #2B2B2B;
+        font-size: clamp(4.5rem, 6vw, 6rem);
         margin-bottom: 20px;
       }
+
       .about-content p {
-        font-size: clamp(0.5rem, 1vw, 1rem);
+        font-size: clamp(0.7rem, 2vw, 1rem);
+        line-height: 1.7;
+
         margin-bottom: 20px;
       }
 
@@ -237,11 +244,14 @@ margin-top: -10vh;
           min-height: 260px;
         }
       }
-       .about-content h2 {
-      text-align: center;
-        font-size: 75px;;
+
+      .about-content h2 {
+        text-align: center;
+        font-size: 75px;
+        ;
         margin-bottom: 20px;
       }
+
       .about-content p {
 
         font-size: 20px;
@@ -260,7 +270,7 @@ margin-top: -10vh;
         font-size: clamp(2.5rem, 6vw, 6rem);
         margin-bottom: 30px;
         text-align: center;
-                color: #2B2B2B;
+        color: #2B2B2B;
 
       }
 
@@ -268,7 +278,7 @@ margin-top: -10vh;
         width: 95%;
         max-width: 1200px;
         height: 600px;
-
+        position: relative;
         overflow: hidden;
 
         background: var(--pink-accent);
@@ -277,20 +287,20 @@ margin-top: -10vh;
 
         padding: 40px 20px;
         overflow-x: scroll;
-  overflow-y: hidden;
+        overflow-y: hidden;
 
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
 
-  cursor: grab;
+        cursor: grab;
 
-  scroll-behavior: smooth;
+        scroll-behavior: smooth;
       }
 
       .carousel-track {
         display: flex;
         gap: 20px;
-          width: max-content;
+        width: max-content;
 
 
         will-change: transform;
@@ -315,26 +325,29 @@ margin-top: -10vh;
       .carousel-item img {
         width: 100%;
         height: 100%;
-object-fit: contain;
-      }
-         .carousel-item.wide {
-  width: 500px;   /* make it wider */
-  min-width: 500px;
-object-fit: cover;
-           transform: scale(0.9);
+        object-fit: contain;
       }
 
+      .carousel-item.wide {
+        width: 500px;
+        /* make it wider */
+        min-width: 500px;
+        object-fit: cover;
+        transform: scale(0.9);
+      }
 
-.carousel-frame::-webkit-scrollbar {
-  display: none;
-}
+
+      .carousel-frame::-webkit-scrollbar {
+        display: none;
+      }
 
 
 
 
-.carousel-frame:active {
-  cursor: grabbing;
-}
+      .carousel-frame:active {
+        cursor: grabbing;
+      }
+
       /* TABLET */
 
       @media (max-width: 1024px) {
@@ -348,377 +361,379 @@ object-fit: cover;
 
       /* MOBILE */
 
-     @media (max-width: 600px) {
+      @media (max-width: 600px) {
 
-  section {
-    padding: 8vh 5vw;
-  }
+        section {
+          padding: 8vh 5vw;
+        }
 
-  #carousel-section {
-    flex-direction: column;
-    align-items: center;
-  }
+        #carousel-section {
+          flex-direction: column;
+          align-items: center;
+        }
 
-  .carousel-text h2 {
-    font-size: clamp(2rem, 10vw, 3rem);
-    margin-bottom: 20px;
-  }
+        .carousel-text h2 {
+          font-size: clamp(2rem, 10vw, 3rem);
+          margin-bottom: 20px;
+        }
 
-  .carousel-frame {
-    width: 100%;
-    height: 320px; /* MUCH smaller for mobile */
-    padding: 20px 12px;
-    border-radius: 18px;
-  }
+        .carousel-frame {
+          width: 100%;
+          height: 320px;
+          /* MUCH smaller for mobile */
+          padding: 20px 12px;
+          border-radius: 18px;
+        }
 
-  .carousel-track {
-    gap: -5px; /* tighter spacing for small screens */
-  }
+        .carousel-track {
+          gap: -5px;
+          /* tighter spacing for small screens */
+        }
 
-  .carousel-item {
-    min-width: 140px;
-    width: 140px;
-    height: 240px; /* better vertical balance */
-    border-radius: 14px;
-  }
-}
-   
-    
-      
- /* =========================
+        .carousel-item {
+          min-width: 140px;
+          width: 140px;
+          height: 240px;
+          /* better vertical balance */
+          border-radius: 14px;
+        }
+      }
+
+
+
+      /* =========================
    CONTACT
 ========================= */
 
-#contact-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 5vw;
-}
+      #contact-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 5vw;
+      }
 
-.container {
-  width: min(1200px, 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      .container {
+        width: min(1200px, 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-/* TITLE */
+      /* TITLE */
 
-.container h1 {
-  width: 100%;
-  color: #262626;
+      .container h1 {
+        width: 100%;
+        color: #262626;
 
-  font-size: clamp(3rem, 8vw, 5.5rem);
+        font-size: clamp(3rem, 8vw, 5.5rem);
 
-  margin-bottom: 25px;
+        margin-bottom: 25px;
 
-  letter-spacing: -2px;
+        letter-spacing: -2px;
 
-  text-align: left;
-}
+        text-align: left;
+      }
 
-/* EMAIL */
+      /* EMAIL */
 
-.container h2 {
-  font-size: clamp(0.9rem, 2vw, 1.3rem);
+      .container h2 {
+        font-size: clamp(0.9rem, 2vw, 1.3rem);
 
-  color: white;
+        color: white;
 
-  margin-top: 15px;
+        margin-top: 15px;
 
-  word-break: break-word;
-}
+        word-break: break-word;
+      }
 
-/* FORM */
+      /* FORM */
 
-.form-card {
-  background-color: #262626;
+      .form-card {
+        background-color: #262626;
 
-  width: 100%;
+        width: 100%;
 
-  padding: 60px;
+        padding: 60px;
 
-  display: flex;
+        display: flex;
 
-  gap: 40px;
+        gap: 40px;
 
-  color: white;
+        color: white;
 
-  border-radius: 24px;
-}
+        border-radius: 24px;
+      }
 
-/* LEFT SIDE */
+      /* LEFT SIDE */
 
-.input-group {
-  flex: 1;
+      .input-group {
+        flex: 1;
 
-  display: flex;
+        display: flex;
 
-  flex-direction: column;
+        flex-direction: column;
 
-  gap: 25px;
-}
+        gap: 25px;
+      }
 
-.field {
-  display: flex;
-  flex-direction: column;
-}
+      .field {
+        display: flex;
+        flex-direction: column;
+      }
 
-.field label {
-  font-size: clamp(1rem, 2vw, 1.8rem);
+      .field label {
+        font-size: clamp(1rem, 2vw, 1.8rem);
 
-  margin-bottom: 5px;
+        margin-bottom: 5px;
 
-  transition: opacity 0.2s ease;
-}
+        transition: opacity 0.2s ease;
+      }
 
-.field input {
-  background: transparent;
+      .field input {
+        background: transparent;
 
-  border: none;
+        border: none;
 
-  border-bottom: 2px solid white;
+        border-bottom: 2px solid white;
 
-  color: white;
+        color: white;
 
-  font-size: 18px;
+        font-size: 18px;
 
-  padding: 10px 0;
+        padding: 10px 0;
 
-  outline: none;
+        outline: none;
 
-  width: 100%;
-}
+        width: 100%;
+      }
 
-/* ACTIONS */
+      /* ACTIONS */
 
-.actions {
-  margin-top: 20px;
+      .actions {
+        margin-top: 20px;
 
-  display: flex;
+        display: flex;
 
-  align-items: center;
+        align-items: center;
 
-  flex-wrap: wrap;
+        flex-wrap: wrap;
 
-  gap: 20px;
-}
+        gap: 20px;
+      }
 
-/* BUTTON */
+      /* BUTTON */
 
-.send-btn {
-  background-color: white;
+      .send-btn {
+        background-color: white;
 
-  color: black;
+        color: black;
 
-  border: none;
+        border: none;
 
-  padding: 12px 30px;
+        padding: 12px 30px;
 
-  font-family: 'Arial Black', sans-serif;
+        font-family: 'Arial Black', sans-serif;
 
-  font-size: 22px;
+        font-size: 22px;
 
-  cursor: pointer;
+        cursor: pointer;
 
-  text-transform: uppercase;
+        text-transform: uppercase;
 
-  transition: background-color 0.3s ease, color 0.3s ease;
+        transition: background-color 0.3s ease, color 0.3s ease;
 
-  border-radius: 100px;
-}
+        border-radius: 100px;
+      }
 
-.send-btn.sent {
-  background-color: #D97388;
-  color: white;
-}
+      .send-btn.sent {
+        background-color: #D97388;
+        color: white;
+      }
 
-/* SOCIALS */
+      /* SOCIALS */
 
-.social-circles {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+      .social-circles {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
 
-.circle {
-  width: 45px;
-  height: 45px;
+      .circle {
+        width: 45px;
+        height: 45px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-  transition: transform 0.2s ease; /* smooth animation */
-}
+        transition: transform 0.2s ease;
+        /* smooth animation */
+      }
 
-.circle:hover {
-  transform: scale(1.5); /* increase size by 5% */
-}
+      .circle:hover {
+        transform: scale(1.5);
+        /* increase size by 5% */
+      }
 
-.circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-/* MESSAGE */
+      .circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
 
-.message-group {
-  flex: 1;
+      /* MESSAGE */
 
-  background-color: #F4EEE9;
+      .message-group {
+        flex: 1;
 
-  padding: 20px;
+        background-color: #F4EEE9;
 
-  display: flex;
+        padding: 20px;
 
-  flex-direction: column;
+        display: flex;
 
-  border-radius: 16px;
+        flex-direction: column;
 
-  min-height: 350px;
-}
+        border-radius: 16px;
 
-.message-group label {
-  color: #262626;
+        min-height: 350px;
+      }
 
-  font-size: clamp(1.2rem, 2vw, 2rem);
+      .message-group label {
+        color: #262626;
 
-  margin-bottom: 10px;
+        font-size: clamp(1.2rem, 2vw, 2rem);
 
-  transition: opacity 0.2s ease;
-}
+        margin-bottom: 10px;
 
-.message-group textarea {
-  flex-grow: 1;
+        transition: opacity 0.2s ease;
+      }
 
-  background: transparent;
+      .message-group textarea {
+        flex-grow: 1;
 
-  border: none;
+        background: transparent;
 
-  resize: none;
+        border: none;
 
-  outline: none;
+        resize: none;
 
-  font-size: 18px;
+        outline: none;
 
-  width: 100%;
-}
+        font-size: 18px;
 
-/* HIDDEN LABELS */
+        width: 100%;
+      }
 
-.hidden {
-  opacity: 0;
+      /* HIDDEN LABELS */
 
-  height: 0;
+      .hidden {
+        opacity: 0;
 
-  margin: 0;
+        height: 0;
 
-  pointer-events: none;
-}
+        margin: 0;
 
-/* =========================
+        pointer-events: none;
+      }
+
+      /* =========================
    TABLET
 ========================= */
 
-@media (max-width: 1024px) {
+      @media (max-width: 1024px) {
 
-  #contact-section {
-    padding: 80px 5vw;
-  }
+        #contact-section {
+          padding: 80px 5vw;
+        }
 
-  .form-card {
-    flex-direction: column;
+        .form-card {
+          flex-direction: column;
 
-    padding: 40px;
-  }
+          padding: 40px;
+        }
 
-  .message-group {
-    min-height: 260px;
-  }
+        .message-group {
+          min-height: 260px;
+        }
 
-  .container h1 {
-    text-align: left;
-  }
-}
+        .container h1 {
+          text-align: left;
+        }
+      }
 
-/* =========================
+      /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 600px) {
+      @media (max-width: 600px) {
 
-  #contact-section {
-    padding: 60px 5vw;
-  }
+        #contact-section {
+          padding: 60px 5vw;
+        }
 
-  .container h1 {
-    text-align: center;
+        .container h1 {
+          text-align: center;
 
-    margin-bottom: 20px;
-  }
+          margin-bottom: 20px;
+        }
 
-  .form-card {
-    padding: 24px;
+        .form-card {
+          padding: 24px;
 
-    gap: 24px;
+          gap: 24px;
 
-    border-radius: 20px;
-  }
+          border-radius: 20px;
+        }
 
-  .input-group {
-    gap: 18px;
-  }
+        .input-group {
+          gap: 18px;
+        }
 
-  .field input {
-    font-size: 16px;
-  }
+        .field input {
+          font-size: 16px;
+        }
 
-  .message-group {
-    min-height: 220px;
+        .message-group {
+          min-height: 220px;
 
-    padding: 16px;
-  }
+          padding: 16px;
+        }
 
-  .message-group textarea {
-    font-size: 16px;
-  }
+        .message-group textarea {
+          font-size: 16px;
+        }
 
-  .actions {
-    flex-direction: column;
+        .actions {
+          flex-direction: column;
 
-    align-items: flex-start;
-  }
+          align-items: flex-start;
+        }
 
-  .send-btn {
-    width: 100%;
+        .send-btn {
+          width: 100%;
 
-    text-align: center;
-  }
+          text-align: center;
+        }
 
-  .social-circles {
-    justify-content: center;
+        .social-circles {
+          justify-content: center;
 
-    width: 100%;
-  }
+          width: 100%;
+        }
 
-  .circle {
-    width: 38px;
-    height: 38px;
-  }
+        .circle {
+          width: 38px;
+          height: 38px;
+        }
 
-  .container h2 {
-    text-align: center;
+        .container h2 {
+          text-align: center;
 
-    width: 100%;
-  }
-}
-      
-      
-      
-      
+          width: 100%;
+        }
+      }
     </style>
   </head>
 
@@ -783,15 +798,15 @@ object-fit: cover;
             </a>
           </div>
 
-         <div class="carousel-item wide">
-  <a href="rebranding.html">
-    <img src="rebrandCover.png" alt="Project">
-  </a>
-</div>
           <div class="carousel-item wide">
-           <a href="app.html">
-    <img src="nightCover.png" alt="Project">
-  </a>
+            <a href="rebranding.html">
+              <img src="rebrandCover.png" alt="Project">
+            </a>
+          </div>
+          <div class="carousel-item wide">
+            <a href="app.html">
+              <img src="nightCover.png" alt="Project">
+            </a>
           </div>
           <div class="carousel-item"></div>
 
@@ -799,73 +814,64 @@ object-fit: cover;
 
       </div>
 
-      
+
     </section>
-    
+
     <!-- contact-->
-   <section id="contact-section">
-  <div class="container">
-    <h1>Contact</h1>
+    <section id="contact-section">
+      <div class="container">
+        <h1>Contact</h1>
 
-    <form class="form-card" id="contactForm">
+        <form class="form-card" id="contactForm">
 
-        <div class="input-group">
+          <div class="input-group">
 
             <div class="field">
-                <label for="name">Name</label>
-                <input id="name" type="text">
+              <label for="name">Name</label>
+              <input id="name" type="text">
             </div>
 
             <div class="field">
-                <label for="email">Email</label>
-                <input id="email" type="email">
+              <label for="email">Email</label>
+              <input id="email" type="email">
             </div>
 
             <div class="field">
-                <label for="subject">Subject</label>
-                <input id="subject" type="text">
+              <label for="subject">Subject</label>
+              <input id="subject" type="text">
             </div>
 
             <div class="actions">
-                <button class="send-btn" id="sendBtn" type="submit">SEND</button>
+              <button class="send-btn" id="sendBtn" type="submit">SEND</button>
 
-               <div class="social-circles">
-    <a href="tel:+5513133846" class="circle" aria-label="Call us">
-        <img src="call.png" alt="Call">
-    </a>
+              <div class="social-circles">
+                <a href="tel:+5513133846" class="circle" aria-label="Call us">
+                  <img src="call.png" alt="Call">
+                </a>
 
-    <a href="https://www.instagram.com/mmilk_chocolatee/" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="circle" 
-       aria-label="Instagram">
-        <img src="insta.png" alt="Instagram">
-    </a>
+                <a href="https://www.instagram.com/mmilk_chocolatee/" target="_blank" rel="noopener noreferrer" class="circle" aria-label="Instagram">
+                  <img src="insta.png" alt="Instagram">
+                </a>
 
-    <a href="https://www.linkedin.com/in/caelyn-graham-a03103327/" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="circle" 
-       aria-label="LinkedIn">
-        <img src="linkedIn.png" alt="LinkedIn">
-    </a>
-</div>
+                <a href="https://www.linkedin.com/in/caelyn-graham-a03103327/" target="_blank" rel="noopener noreferrer" class="circle" aria-label="LinkedIn">
+                  <img src="linkedIn.png" alt="LinkedIn">
+                </a>
+              </div>
             </div>
-          <h2>caelynsograham@gmail.com</h2>
+            <h2>caelynsograham@gmail.com</h2>
 
-        </div>
+          </div>
 
-        <div class="message-group">
+          <div class="message-group">
             <label for="message">Message</label>
             <textarea id="message"></textarea>
-        </div>
+          </div>
 
-    </form>
- </div>
-</section>
+        </form>
+      </div>
+    </section>
 
     <script>
-      
       /* =========================
    RABBIT ANIMATION
 ========================= */
@@ -965,272 +971,292 @@ object-fit: cover;
       window.addEventListener('resize', updateRabbit);
 
       window.addEventListener('load', updateRabbit);
-      
-      
-   /* =========================
+
+
+      /* =========================
    CONTACT CENTER ANIMATION
 ========================= */
 
-const contactSection = document.getElementById('contact-section');
+      const contactSection = document.getElementById('contact-section');
 
-function animateRabbitToCenter() {
+      function animateRabbitToCenter () {
 
-  const rect = contactSection.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
-  const windowWidth = window.innerWidth;
+        const rect = contactSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const windowWidth = window.innerWidth;
 
-  /* START animation when contact section enters screen */
+        /* START animation when contact section enters screen */
 
-  const triggerPoint = windowHeight * 0.8;
+        const triggerPoint = windowHeight * 0.8;
 
-  let progress =
-    (triggerPoint - rect.top) / (windowHeight * 0.8);
+        let progress =
+          (triggerPoint - rect.top) / (windowHeight * 0.8);
 
-  progress = Math.max(0, Math.min(progress, 1));
+        progress = Math.max(0, Math.min(progress, 1));
 
-  /* CURRENT rabbit size */
+        /* CURRENT rabbit size */
 
-  const rabbitWidth = rabbit.offsetWidth;
+        const rabbitWidth = rabbit.offsetWidth;
 
- /* TARGET CENTER POSITION */
+        /* TARGET CENTER POSITION */
 
-let horizontalOffset;
-let topOffset;
+        let horizontalOffset;
+        let topOffset;
 
-/* MOBILE */
+        /* MOBILE */
 
-if (windowWidth <= 600) {
+        if (windowWidth <= 600) {
 
-  horizontalOffset = -0;
-  topOffset = -480;
+          horizontalOffset = -0;
+          topOffset = -470;
 
-/* TABLET */
+          /* TABLET */
 
-} else if (windowWidth <= 1024) {
+        } else if (windowWidth <= 1024) {
 
-  horizontalOffset = 80;
-  topOffset = -490;
+          horizontalOffset = 80;
+          topOffset = -480;
 
-/* DESKTOP */
+          /* DESKTOP */
 
-} else {
+        } else {
 
-  horizontalOffset = 50;
-  topOffset = -330;
-}
+          horizontalOffset = 50;
+          topOffset = -330;
+        }
 
-const centerLeft =
-  (windowWidth - rabbitWidth) / 2 + horizontalOffset;
+        const centerLeft =
+          (windowWidth - rabbitWidth) / 2 + horizontalOffset;
 
-const centerTop =
-  (windowHeight - rabbitWidth) / 2 + topOffset;
-  /* GET CURRENT POSITION */
+        const centerTop =
+          (windowHeight - rabbitWidth) / 2 + topOffset;
+        /* GET CURRENT POSITION */
 
-  const currentLeft =
-    rabbit.getBoundingClientRect().left;
+        const currentLeft =
+          rabbit.getBoundingClientRect().left;
 
-  const currentTop =
-    rabbit.getBoundingClientRect().top;
+        const currentTop =
+          rabbit.getBoundingClientRect().top;
 
-  /* SMOOTH INTERPOLATION */
+        /* SMOOTH INTERPOLATION */
 
-  const moveLeft =
-    currentLeft +
-    ((centerLeft - currentLeft) * progress);
+        const moveLeft =
+          currentLeft +
+          ((centerLeft - currentLeft) * progress);
 
-  const moveTop =
-    currentTop +
-    ((centerTop - currentTop) * progress);
+        const moveTop =
+          currentTop +
+          ((centerTop - currentTop) * progress);
 
-  /* APPLY POSITION */
+        /* APPLY POSITION */
 
-  rabbit.style.left = moveLeft + "px";
-  rabbit.style.top = moveTop + "px";
+        rabbit.style.left = moveLeft + "px";
+        rabbit.style.top = moveTop + "px";
 
-  rabbit.style.right = "";
+        rabbit.style.right = "";
 
-  /* SCALE UP TO 5% LARGER */
+        /* SCALE UP TO 5% LARGER */
 
-  const scale =
-    1 + (0.5 * progress);
+        const scale =
+          1 + (0.5 * progress);
 
-  rabbit.style.transform =
-    `scale(${scale})`;
+        rabbit.style.transform =
+          `scale(${scale})`;
 
-  rabbit.style.transformOrigin =
-    "center center";
-}
+        rabbit.style.transformOrigin =
+          "center center";
+      }
 
-/* RUN AFTER EXISTING ANIMATION */
+      /* RUN AFTER EXISTING ANIMATION */
 
-window.addEventListener('scroll', animateRabbitToCenter);
-window.addEventListener('resize', animateRabbitToCenter);
-window.addEventListener('load', animateRabbitToCenter);
-      
-/* =========================
-   SMOOTH INFINITE CAROUSEL (NO GLITCH FIX)
-========================= */
+      window.addEventListener('scroll', animateRabbitToCenter);
+      window.addEventListener('resize', animateRabbitToCenter);
+      window.addEventListener('load', animateRabbitToCenter);
 
-const frame = document.querySelector(".carousel-frame");
-const track = document.getElementById("track");
+      /* =========================
+         SMOOTH INFINITE CAROUSEL (NO GLITCH FIX)
+      ========================= */
 
-let speed = 0.6; // adjust speed
-let offset = 0;
-let animationId;
+      const frame = document.querySelector(".carousel-frame");
+      const track = document.getElementById("track");
 
-// clone items once
-const items = Array.from(track.children);
-items.forEach(item => {
-  const clone = item.cloneNode(true);
-  track.appendChild(clone);
-});
+      let speed = 0.6; // adjust speed
+      let offset = 0;
+      let animationId;
 
-// measure width AFTER DOM + images load
-function getLoopWidth() {
-  return track.scrollWidth / 2;
-}
+      // clone items once
+      const items = Array.from(track.children);
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        track.appendChild(clone);
+      });
 
-function animate() {
-  const loopWidth = getLoopWidth();
+      /* FIX EMPTY SPACE GLITCH */
+
+      let loopPoint = 0;
+
+      function calculateLoopPoint () {
+
+        loopPoint = 0;
+
+        items.forEach(item => {
+          loopPoint += item.offsetWidth;
+        });
+
+        /* include flex gap */
+        loopPoint += (items.length - 1) * 20;
+      }
+
+      // measure width AFTER DOM + images load
+      function getLoopWidth () {
+        return track.scrollWidth / 2;
+      }
+
+      function animate () {
 
   offset += speed;
 
-  // reset seamlessly (no scrollLeft snapping)
-  if (offset >= loopWidth) {
-    offset = 0;
+  /* seamless reset BEFORE empty area appears */
+  if (offset >= loopPoint) {
+    offset -= loopPoint;
   }
 
-  track.style.transform = `translateX(${-offset}px)`;
+  track.style.transform =
+    `translateX(${-offset}px)`;
 
-  animationId = requestAnimationFrame(animate);
+  animationId =
+    requestAnimationFrame(animate);
 }
 
-function start() {
-  cancelAnimationFrame(animationId);
-  animationId = requestAnimationFrame(animate);
-}
+      function start () {
+        cancelAnimationFrame(animationId);
+        animationId = requestAnimationFrame(animate);
+      }
 
-function stop() {
-  cancelAnimationFrame(animationId);
-}
+      function stop () {
+        cancelAnimationFrame(animationId);
+      }
 
-// start after load (important)
-window.addEventListener("load", start);
+      // start after load (important)
+window.addEventListener("load", () => {
 
-/* pause on hover */
-frame.addEventListener("mouseenter", stop);
-frame.addEventListener("mouseleave", start);
+  calculateLoopPoint();
 
-/* touch support */
-frame.addEventListener("touchstart", stop);
-frame.addEventListener("touchend", start);
-
-
-
-/* =========================
-   MOBILE SWIPE SUPPORT
-========================= */
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-frame.addEventListener("mousedown", (e) => {
-
-  isDown = true;
-
-  startX = e.pageX - frame.offsetLeft;
-
-  scrollLeft = frame.scrollLeft;
-
-  stopAutoScroll();
+  start();
 });
+      /* pause on hover */
+      frame.addEventListener("mouseenter", stop);
+      frame.addEventListener("mouseleave", start);
 
-frame.addEventListener("mouseleave", () => {
-  isDown = false;
-  startAutoScroll();
-});
+      /* touch support */
+      frame.addEventListener("touchstart", stop);
+      frame.addEventListener("touchend", start);
 
-frame.addEventListener("mouseup", () => {
-  isDown = false;
-  startAutoScroll();
-});
 
-frame.addEventListener("mousemove", (e) => {
 
-  if (!isDown) return;
+      /* =========================
+         MOBILE SWIPE SUPPORT
+      ========================= */
 
-  e.preventDefault();
+      let isDown = false;
+      let startX;
+      let scrollLeft;
 
-  const x = e.pageX - frame.offsetLeft;
+      frame.addEventListener("mousedown", (e) => {
 
-  const walk = (x - startX) * 1.5;
+        isDown = true;
 
-  frame.scrollLeft = scrollLeft - walk;
-});
+        startX = e.pageX - frame.offsetLeft;
 
-/* touch */
+        scrollLeft = frame.scrollLeft;
 
-frame.addEventListener("touchstart", stopAutoScroll);
+        stopAutoScroll();
+      });
 
-frame.addEventListener("touchend", startAutoScroll);
-      
-      
-      
+      frame.addEventListener("mouseleave", () => {
+        isDown = false;
+        startAutoScroll();
+      });
+
+      frame.addEventListener("mouseup", () => {
+        isDown = false;
+        startAutoScroll();
+      });
+
+      frame.addEventListener("mousemove", (e) => {
+
+        if (!isDown) return;
+
+        e.preventDefault();
+
+        const x = e.pageX - frame.offsetLeft;
+
+        const walk = (x - startX) * 1.5;
+
+        frame.scrollLeft = scrollLeft - walk;
+      });
+
+      /* touch */
+
+      frame.addEventListener("touchstart", stopAutoScroll);
+
+      frame.addEventListener("touchend", startAutoScroll);
+
+
+
       ///// contact section////
-        // Label hide/show on typing
-    function setupField(inputId) {
+      // Label hide/show on typing
+      function setupField (inputId) {
         const input = document.getElementById(inputId);
         const label = document.querySelector(`label[for="${inputId}"]`);
 
         input.addEventListener("input", () => {
-            if (input.value.trim() !== "") {
-                label.classList.add("hidden");
-            } else {
-                label.classList.remove("hidden");
-            }
+          if (input.value.trim() !== "") {
+            label.classList.add("hidden");
+          } else {
+            label.classList.remove("hidden");
+          }
         });
-    }
+      }
 
-    setupField("name");
-    setupField("email");
-    setupField("subject");
-    setupField("message");
+      setupField("name");
+      setupField("email");
+      setupField("subject");
+      setupField("message");
 
-    // Send button behavior
-    const form = document.getElementById("contactForm");
-const btn = document.getElementById("sendBtn");
+      // Send button behavior
+      const form = document.getElementById("contactForm");
+      const btn = document.getElementById("sendBtn");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const subject = document.getElementById("subject").value;
-  const message = document.getElementById("message").value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
 
-  const mailtoLink =
-    `mailto:caelynsograham@gmail.com` +
-    `?subject=${encodeURIComponent(subject)}` +
-    `&body=${encodeURIComponent(
+        const mailtoLink =
+          `mailto:caelynsograham@gmail.com` +
+          `?subject=${encodeURIComponent(subject)}` +
+          `&body=${encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     )}`;
 
-  // animation
-  btn.classList.add("sent");
-  btn.textContent = "SENT";
+        // animation
+        btn.classList.add("sent");
+        btn.textContent = "SENT";
 
-  // open email client
-  window.location.href = mailtoLink;
+        // open email client
+        window.location.href = mailtoLink;
 
-  // reset UI after animation
-  setTimeout(() => {
-    btn.classList.remove("sent");
-    btn.textContent = "SEND";
-    form.reset();
-  }, 3000);
-});
-      
+        // reset UI after animation
+        setTimeout(() => {
+          btn.classList.remove("sent");
+          btn.textContent = "SEND";
+          form.reset();
+        }, 3000);
+      });
     </script>
 
   </body>

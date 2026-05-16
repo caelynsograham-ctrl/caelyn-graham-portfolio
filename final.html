@@ -14,14 +14,24 @@
 /* ===================== */
 /* BASE */
 /* ===================== */
+  
+  :root {
+        --bg-color: #F4EEE9;
+        --pink-accent: #D97388;
+        --grey-box: #e0e0e0;
+        --dark-grey: #4d4d4d;
+        --button-black: #2B2B2B;
+      }
 body {
   background-color: #f2ede4;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-family: 'Inter', sans-serif;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+          color: var(--dark-grey);
+
 }
  /* ===================== */
       /* Sticky Logo */
@@ -60,13 +70,15 @@ body {
 }
 
 .figma-phone {
-  width: 320px;
+  width: 380px;
   aspect-ratio: 9 / 19.5;
   max-width: 100%;
   border-radius: 30px;
   overflow: hidden;
   border: 2px solid #555;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transform: translateX(-70px);
+    z-index: 8;
+
 }
 
 .figma-phone iframe {
@@ -74,6 +86,8 @@ body {
   height: 100%;
   border: none;
 }
+  
+  
 
 /* ===================== */
 /* RIGHT COLUMN */
@@ -87,23 +101,74 @@ body {
   text-align: center;
 }
 
-.header-box {
-  background-color: #333333;
-  color: white;
-  padding: 20px 30px;
-  font-size: 32px;
-  font-weight: 400;
-  text-align: center;
+ .section-header {
+        color: #D97388;
+        display: inline-block;
+        padding: 10px 40px;
+        margin-bottom: 20px;
+        margin-left: -45px;
+        font-size: 65px;
+   line-height: 1;
+        font-weight: 500;
+        font-family: 'Unbounded', sans-serif;
+  transform: scale(1.2, 1.9) translateY(1.20vw);
+
+      }
+
+
+  
+   p {
+        font-size: clamp(1.4rem, 2vw, 1rem);
+        line-height: 1.7;
+     padding: 40px;
+     text-align: center;
+        margin-bottom: -70px;
+      }
+  
+  .top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 120px;
+
+  background-color: #2B2B2B;
+  color: #2B2B2B;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Unbounded', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  z-index: 9;
+}
+  
+   .bottom-banner {
+  position: fixed;
+  bottom: 00;
+  left: 0;
+
+  width: 100vw;
+  height: 120px;
+
+  background-color: #2B2B2B;
+  color: #2B2B2B;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Unbounded', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  z-index: 9;
 }
 
-.content-box {
-  background-color: #333333;
-  color: white;
-  padding: 40px;
-  line-height: 1.5;
-  font-size: 20px;
-  text-align: center;
-}
 
 /* ===================== */
 /* NAV BUTTON (unchanged) */
@@ -160,30 +225,49 @@ body {
 /* ===================== */
 /* TABLET */
 /* ===================== */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
 
   .slide-container {
+    width: 100%;
+    padding: 0 20px;
     flex-direction: column;
     gap: 40px;
   }
 
-  .content-box {
-    font-size: 18px;
-    padding: 30px;
+  .left-col,
+  .right-col {
+    width: 100%;
   }
 
-  .header-box {
-    font-size: 26px;
+  .figma-phone {
+    transform: none;
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    font-size: 48px;
+    transform: none;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  p {
+    padding: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 0;
   }
 
   .back-button {
-    top: auto;
+    top: 20px;
     left: auto;
-    bottom: 20px;
     right: 20px;
+  }
 
-    font-size: 15px;
-    padding: 10px 14px;
+  .top-banner,
+  .bottom-banner {
+    height: 80px;
+    font-size: 12px;
   }
 }
 
@@ -193,35 +277,51 @@ body {
 @media (max-width: 768px) {
 
   body {
-    align-items: flex-start;
-    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
   }
 
   .slide-container {
     flex-direction: column;
-    gap: 30px;
+    width: 100%;
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  .left-col,
+  .right-col {
+    width: 100%;
   }
 
   .figma-phone {
-    width: 260px;
+    margin-top: 90px;
+    width: 240px;
+    transform: none;
   }
 
-  .header-box {
-    font-size: 22px;
+  .section-header {
+    font-size: 36px;
+    transform: none;
+    margin-left: 0;
+  }
+
+  p {
+    font-size: 1rem;
     padding: 15px;
   }
 
-  .content-box {
-    font-size: 16px;
-    padding: 20px;
+  .top-banner,
+  .bottom-banner {
+    height: 60px;
+    font-size: 11px;
   }
 
   .back-button {
-    bottom: 15px;
-    right: 15px;
-
     font-size: 12px;
     padding: 8px 12px;
+    top: 15px;
+    right: 15px;
+    left: auto;
   }
 }
 
@@ -229,6 +329,9 @@ body {
 </head>
 
 <body>
+  <div class="top-banner">
+  Brand System Review
+</div>
 <div class="rabbit-sticky">
       <a href="nav.html">
         <img src="Graham_logo.png" style="width:100%">
@@ -247,22 +350,23 @@ body {
 
   <div class="right-col">
 
-    <div class="header-box">
-      Final Solution & Reflection
-    </div>
+            <div class="section-header">Brand System Review</div>
 
-    <div class="content-box">
-      We implemented several features to improve both usability and safety within the app, 
+<p> We implemented several features to improve both usability and safety within the app, 
       including friends lists, proximity maps, and friend notifications to help users stay 
       connected throughout the night. To reduce UI confusion, we replaced swipe interactions 
       with a more intuitive button-based layout and refined smaller interface elements, 
       such as creating consistent button designs across the app. We also incorporated 
-      clear and organized text to better communicate important safety information to users.
+      clear and organized text to better communicate important safety information to users.</p>
+    <div class="content-box">
+     
     </div>
 
   </div>
 
 </div>
-
+ <div class="bottom-banner">
+  Brand System Review
+</div>
 </body>
 </html>
